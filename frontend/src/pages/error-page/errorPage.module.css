@@ -1,0 +1,33 @@
+.header {
+	color: #ef0f16;
+	font-size: 50px;
+}
+
+.error_container {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.button {
+	margin-top: 80px;
+	padding: 20px;
+	width: 300px;
+	background-color: #4179e2;
+	font-size: 20px;
+	outline: none;
+	border: none;
+}
+
+.button:hover {
+	transition: 0.8s ease;
+	background-color: #f8f64f;
+}
+
+.button:active {
+	border: none;
+	outline: none;
+}
+
+.button:focus {
+	outline: none;
+}
