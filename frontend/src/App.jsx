@@ -1,4 +1,5 @@
 import './App.css'
+import Loader from './components/loader/loader.jsx'
 
 function App() {
 	return (
