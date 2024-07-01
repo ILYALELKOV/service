@@ -5,6 +5,7 @@ function App() {
 	return (
 		<>
 			<h1>Hello from my first pet project!!!!!!!</h1>
+			<Loader />
 		</>
 	)
 }
