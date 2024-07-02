@@ -26,9 +26,9 @@ export const Authorization = () => {
 
 	return (
 		<>
-			<div className={style.registration_container}>
+			<div className={style.authorization_container}>
 				<h2>Авторизация</h2>
-				<form className={style.registration_form} onSubmit={handleSubmit(submit)}>
+				<form className={style.authorization_form} onSubmit={handleSubmit(submit)}>
 					<div className={style.input_container}>
 						<Input {...register('login')} text="Введите имя..." type="text" styleClass={styleInput}
 									 autoComplete="username" />
@@ -42,7 +42,7 @@ export const Authorization = () => {
 						</div>
 					</div>
 					<div className={style.button_container}>
-						<button disabled={!!formError} type="submit">Зарегистрироваться</button>
+						<button disabled={!!formError} type="submit">Войти</button>
 						<Link to="/">
 							<button className={style.button_main}>Главная страница</button>
 						</Link>

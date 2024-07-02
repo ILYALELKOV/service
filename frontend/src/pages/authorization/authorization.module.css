@@ -1,9 +1,9 @@
-.registration_container {
+.authorization_container {
 	width: 500px;
 	height: 700px;
 	padding: 30px;
 	border-radius: 10px;
-	margin: 0 auto;
+	margin: 100px auto;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -12,11 +12,11 @@
 	background: linear-gradient(to right, #bfedf6, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.registration_container > h2 {
+.authorization_container > h2 {
 	font-size: 38px;
 }
 
-.registration_form {
+.authorization_form {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
@@ -31,19 +31,19 @@
 	gap: 35px;
 }
 
-.registration_form button:hover {
+.authorization_form button:hover {
 	outline: none;
 	background-color: #6df190;
 	transition: 1.1s ease;
 }
 
-.registration_form button:disabled {
+.authorization_form button:disabled {
 	background-color: #f4f3f3;
 	border: none;
 	outline: none;
 }
 
-.registration_form button:focus {
+.authorization_form button:focus {
 	border: none;
 	outline: 1px #e0de40 solid;
 	background-color: #6df190;
