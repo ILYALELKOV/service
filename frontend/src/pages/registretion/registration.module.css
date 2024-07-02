@@ -1,6 +1,6 @@
 .registration_container {
 	width: 500px;
-	height: 650px;
+	height: 700px;
 	padding: 30px;
 	border-radius: 10px;
 	margin: 0 auto;
@@ -10,7 +10,6 @@
 	background: #1c92d2; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #f2fcfe, #1c92d2); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #bfedf6, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 .registration_container > h2 {
@@ -22,7 +21,6 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 40px;
 	position: relative;
 }
 
@@ -30,13 +28,19 @@
 	display: flex;
 	flex-direction: column;
 	margin-top: 60px;
-	gap: 60px;
+	gap: 35px;
 }
 
 .registration_form button:hover {
 	outline: none;
 	background-color: #6df190;
 	transition: 1.1s ease;
+}
+
+.registration_form button:disabled {
+	background-color: #f4f3f3;
+	border: none;
+	outline: none;
 }
 
 .registration_form button:focus {
@@ -55,6 +59,7 @@
 
 .button_container button {
 	width: 360px;
+	box-shadow: 3px 3px 3px #393d39;
 }
 
 .button_container button:last-child {
@@ -65,4 +70,17 @@
 	background: #0cebeb; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.error_container {
+	height: 120px;
+	max-width: 400px;
+	margin: 0;
+	color: #b01414;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.error_container > p {
+	margin: 7px 0;
 }
