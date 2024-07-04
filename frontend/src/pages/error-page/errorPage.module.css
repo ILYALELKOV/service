@@ -1,23 +1,41 @@
-.header {
-	color: #ef0f16;
-	font-size: 50px;
+.error_container {
+	width: 1280px;
+	padding: 10px 30px;
+	height: 73vh;
+	border-radius: 5px;
+	background: #8E0E00; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.error_container {
+.error_header {
+	color: #e8eef7;
+	font-size: 50px;
+	margin-top: 250px;
+}
+
+.error_message {
 	font-size: 30px;
 	font-weight: bold;
+	color: #e8eef7;
 }
 
-.button {
+.error_button {
 	margin-top: 80px;
 	padding: 20px;
 	width: 300px;
-	background: #0cebeb; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	font-size: 20px;
+	font-weight: bold;
+	background: #73C8A9; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #373B44, #73C8A9); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #373B44, #73C8A9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	outline: none;
 	border: none;
+}
+
+.error_button:hover {
+	transition: 0.7s ease-in-out;
+	box-shadow: 1px 5px 8px #f0f4f0;
 }
 
 

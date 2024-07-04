@@ -10,10 +10,12 @@
 	background: #1c92d2; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #f2fcfe, #1c92d2); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #bfedf6, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
 }
 
 .authorization_container > h2 {
 	font-size: 38px;
+	font-weight: 500;
 }
 
 .authorization_form {
@@ -31,10 +33,10 @@
 	gap: 35px;
 }
 
-.authorization_form button:hover {
-	outline: none;
-	background-color: #6df190;
-	transition: 1.1s ease;
+.authorization_form button:first-child:hover {
+	background: #0cebeb; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .authorization_form button:disabled {
@@ -46,7 +48,11 @@
 .authorization_form button:focus {
 	border: none;
 	outline: 1px #e0de40 solid;
-	background-color: #6df190;
+	box-shadow: 1px 5px 8px #f0f4f0;
+	transition: 0.9s ease;
+	background: #0cebeb; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .button_container {
@@ -60,6 +66,11 @@
 .button_container button {
 	width: 360px;
 	box-shadow: 3px 3px 3px #393d39;
+}
+
+.button_container button:hover {
+	box-shadow: 1px 5px 8px #f0f4f0;
+	transition: 0.9s ease;
 }
 
 .button_registration {

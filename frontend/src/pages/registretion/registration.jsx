@@ -31,7 +31,7 @@ export const Registration = () => {
 				<h2>Регистрация</h2>
 				<form className={style.registration_form} onSubmit={handleSubmit(submit)}>
 					<div className={style.input_container}>
-						<Input {...register('login')} text="Введите имя..." type="text" styleClass={styleInput}
+						<Input {...register('login')} text="Введите логин..." type="text" styleClass={styleInput}
 									 autoComplete="username" />
 						<Input {...register('password')} text="Введите пароль..." type="password" styleClass={styleInput}
 									 autoComplete="new-password" />

@@ -27,10 +27,10 @@ export const Authorization = () => {
 	return (
 		<>
 			<div className={style.authorization_container}>
-				<h2>Авторизация</h2>
+				<h2>Вход</h2>
 				<form className={style.authorization_form} onSubmit={handleSubmit(submit)}>
 					<div className={style.input_container}>
-						<Input {...register('login')} text="Введите имя..." type="text" styleClass={styleInput}
+						<Input {...register('login')} text="Введите логин..." type="text" styleClass={styleInput}
 									 autoComplete="username" />
 						<Input {...register('password')} text="Введите пароль..." type="password" styleClass={styleInput}
 									 autoComplete="new-password" />
