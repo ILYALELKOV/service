@@ -7,35 +7,27 @@
 	margin-bottom: 20px;
 	width: 1280px;
 	height: 100px;
-	padding: 10px 30px;
+	padding: 10px 20px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-.login_link {
-	color: #0b0808;
+.logo_image {
+	background-image: url(../../../public/logo.svg);
+	width: 190px;
+	height: 80px;
+	padding: 0;
+	border: none;
+	background-position: center;
+	background-size: 90%;
+	background-repeat: no-repeat;
+	background-color: transparent;
 }
 
-.login_link:hover {
-	color: #e7e9e6;
-	transition: 0.6s ease-in-out;
-}
-
-.user_container {
-	display: flex;
-	align-items: center;
-	gap: 20px;
-}
-
-.user_container h3 {
-	color: #b01414;
-}
-
-.input_container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.logo_image:hover {
+	transform: scale(103%);
+	transition: 0.3s ease-in-out;
 }
 
 .btn_search {
@@ -53,6 +45,12 @@
 	background-color: #e97446;
 }
 
+.input_container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .btn_search:hover {
 	transform: scale(102%);
 	background-color: #2ff987;
@@ -66,19 +64,79 @@
 	outline: none;
 }
 
-.logo_image {
-	background-image: url(../../../public/logo.svg);
-	width: 190px;
-	height: 80px;
-	padding: 0;
-	border: none;
-	background-position: center;
-	background-size: 90%;
+.calendar {
+	background-image: url("../../../public/calendar.png");
+	height: 40px;
+	width: 40px;
 	background-repeat: no-repeat;
-	background-color: transparent;
+	background-position: center;
+	background-size: 80%;
 }
 
-.logo_image:hover {
-	transform: scale(103%);
-	transition: 0.4s ease-in-out;
+.date_container {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
+
+.date_container p {
+	margin: 7px;
+}
+
+.user_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	line-height: 45px;
+}
+
+.user_container h3 {
+	margin: 0;
+}
+
+.user_logo {
+	background-image: url("../../../public/user.png");
+	height: 40px;
+	width: 40px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 80%;
+}
+
+.login_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	line-height: 0;
+	transition: transform 0.3s ease-in-out;
+	will-change: transform;
+}
+
+.login_container:hover {
+	transform: scale(103%);
+}
+
+.login {
+	background-image: url("../../../public/login.png");
+	height: 40px;
+	width: 40px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 80%;
+}
+
+.login_link {
+	color: #0b0808;
+}
+
+
+
+
+
+
