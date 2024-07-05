@@ -4,9 +4,10 @@ import { useForm } from 'react-hook-form'
 import { regFormSchema } from './registrationSchema/registrationSchema.js'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useState } from 'react'
+import { ErrorContainer } from '../../components/errorConrainer/errorContainer.jsx'
+import { request } from '../../utils/request.js'
 import style from './registration.module.css'
 import styleInput from './styles/input/input.module.css'
-import { ErrorContainer } from '../../components/errorConrainer/errorContainer.jsx'
 
 export const Registration = () => {
 	const [serverError, setServerError] = useState(null)
@@ -20,11 +21,20 @@ export const Registration = () => {
 		resolver: yupResolver(regFormSchema)
 	})
 
-	const submit = (data) => {
-		console.log(data)
+	const submit = ({ login, password }) => {
+		request('/register', 'POST', { login, password })
+			.then((error, user) => {
+				console.log(user)
+				if (error) {
+					// setServerError(`Ошибка запроса: ${error}`)
+					setServerError(error.error)
+					return
+				}
+			})
 	}
 
 	const formError = errors?.login?.message || errors?.password?.message || errors?.checkPassword?.message
+	const errorMessage = formError || serverError
 
 	return (
 		<>
@@ -40,6 +50,7 @@ export const Registration = () => {
 									 autoComplete="new-password" />
 						<ErrorContainer errors={errors} />
 					</div>
+
 					<div className={style.button_container}>
 						<button disabled={!!formError} type="submit">Зарегистрироваться</button>
 						<Link to="/">
