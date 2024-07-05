@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { regFormSchema } from './registrationSchema/registrationSchema.js'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useState } from 'react'
 import style from './registration.module.css'
 import styleInput from './styles/input/input.module.css'
-import { useState } from 'react'
+import { ErrorContainer } from '../../components/errorConrainer/errorContainer.jsx'
 
 export const Registration = () => {
 	const [serverError, setServerError] = useState(null)
@@ -37,12 +38,7 @@ export const Registration = () => {
 									 autoComplete="new-password" />
 						<Input {...register('checkPassword')} text="Повтор пароля..." type="password" styleClass={styleInput}
 									 autoComplete="new-password" />
-						{/* TODO: вынести блок ошибок в отдельный компонент */}
-						<div className={style.error_container}>
-							<p>{errors.login && errors.login.message}</p>
-							<p>{errors.password && errors.password.message}</p>
-							<p>{errors.checkPassword && errors.checkPassword.message}</p>
-						</div>
+						<ErrorContainer errors={errors} />
 					</div>
 					<div className={style.button_container}>
 						<button disabled={!!formError} type="submit">Зарегистрироваться</button>

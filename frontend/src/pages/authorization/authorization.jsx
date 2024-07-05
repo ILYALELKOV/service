@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useState } from 'react'
 import { authFormSchema } from './authorizationSchema/authorizationSchema.js'
+import { ErrorContainer } from '../../components/errorConrainer/errorContainer.jsx'
 import style from './authorization.module.css'
 import styleInput from '../registretion/styles/input/input.module.css'
 
@@ -34,12 +35,7 @@ export const Authorization = () => {
 									 autoComplete="username" />
 						<Input {...register('password')} text="Введите пароль..." type="password" styleClass={styleInput}
 									 autoComplete="new-password" />
-						{/* TODO: вынести блок ошибок в отдельный компонент */}
-						<div className={style.error_container}>
-							<p>{errors.login && errors.login.message}</p>
-							<p>{errors.password && errors.password.message}</p>
-							<p>{errors.checkPassword && errors.checkPassword.message}</p>
-						</div>
+						<ErrorContainer errors={errors} />
 					</div>
 					<div className={style.button_container}>
 						<button disabled={!!formError} type="submit">Войти</button>
