@@ -1,7 +1,7 @@
 .footer_container {
 	width: 1280px;
 	height: 100px;
-	padding: 10px 30px;
+	padding: 10px 20px;
 	margin: 20px 0;
 	border-radius: 5px;
 	font-weight: 500;
@@ -48,7 +48,7 @@
 }
 
 .weather_container {
-	width: 250px;
+	width: 400px;
 	height: 80px;
 	margin-top: 15px;
 	display: flex;
@@ -66,5 +66,9 @@
 .error_message {
 	color: #c20505;
 	font-size: 18px;
+}
+
+.text_loading {
+	margin-right: 120px;
 }
 

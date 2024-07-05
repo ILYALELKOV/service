@@ -34,7 +34,7 @@ export const Footer = () => {
 					</div>
 				</>
 			) : (
-				'Загрузка погоды...'
+				<div className={styles.text_loading}>Загрузка погоды...</div>
 			)}
 		</div>
 	)
