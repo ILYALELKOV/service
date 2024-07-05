@@ -19,9 +19,9 @@ export const Authorization = () => {
 		resolver: yupResolver(authFormSchema)
 	})
 
-	const submit = (data) => {
-		console.log(data)
-	}
+	// const submit = (data) => {
+	// 	fetch('http://localhost:3001', {})
+	// }
 
 	const formError = errors?.login?.message || errors?.password?.message || errors?.checkPassword?.message
 
