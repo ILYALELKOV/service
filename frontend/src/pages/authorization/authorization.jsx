@@ -19,7 +19,7 @@ export const Authorization = () => {
 		resolver: yupResolver(authFormSchema)
 	})
 
-	const submit = (data) => {
+	const onSubmitLogin = (data) => {
 		console.log(data)
 	}
 
@@ -29,7 +29,7 @@ export const Authorization = () => {
 		<>
 			<div className={style.authorization_container}>
 				<h2>Вход</h2>
-				<form className={style.authorization_form} onSubmit={handleSubmit(submit)}>
+				<form className={style.authorization_form} onSubmit={handleSubmit(onSubmitLogin)}>
 					<div className={style.input_container}>
 						<Input {...register('login')} text="Введите логин..." type="text" styleClass={styleInput}
 									 autoComplete="username" />

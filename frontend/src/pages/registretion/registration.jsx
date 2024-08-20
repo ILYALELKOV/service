@@ -21,14 +21,11 @@ export const Registration = () => {
 		resolver: yupResolver(regFormSchema)
 	})
 
-	const submit = ({ login, password }) => {
+	const onSubmitRegistration = ({ login, password }) => {
 		request('/register', 'POST', { login, password })
-			.then((error, user) => {
-				console.log(user)
+			.then(({ error, user }) => {
 				if (error) {
-					// setServerError(`Ошибка запроса: ${error}`)
 					setServerError(error.error)
-					return
 				}
 			})
 	}
@@ -40,7 +37,7 @@ export const Registration = () => {
 		<>
 			<div className={style.registration_container}>
 				<h2>Регистрация</h2>
-				<form className={style.registration_form} onSubmit={handleSubmit(submit)}>
+				<form className={style.registration_form} onSubmit={handleSubmit(onSubmitRegistration)}>
 					<div className={style.input_container}>
 						<Input {...register('login')} text="Введите логин..." type="text" styleClass={styleInput}
 									 autoComplete="username" />

@@ -10,7 +10,6 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 
-
 app.post('/register', async (req, res) => {
 	try {
 		const user = await register(req.body.login, req.body.password)
@@ -27,5 +26,5 @@ mongoose.connect('mongodb+srv://Ilya:Ilyaasasin99@cluster0.buslwrr.mongodb.net/m
 		})
 	})
 	.catch((error) => {
-		console.log(error)
+		console.log(chalk.bgRed(error))
 	})
