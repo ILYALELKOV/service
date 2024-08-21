@@ -19,7 +19,7 @@ export const Footer = () => {
 			</div>
 
 			{error ? (
-				<div className={styles.error_message}>Weather loading failed</div>
+				<div className={styles.error_message}>Ошибка загрузки погоды</div>
 			) : weather ? (
 				<>
 					<div className={styles.weather_container}>

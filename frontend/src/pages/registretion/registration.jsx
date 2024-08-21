@@ -26,6 +26,7 @@ export const Registration = () => {
 			.then(({ error, user }) => {
 				if (error) {
 					setServerError(error.error)
+					return
 				}
 			})
 	}

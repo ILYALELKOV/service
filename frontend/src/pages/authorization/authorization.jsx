@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { useState } from 'react'
 import { authFormSchema } from './authorizationSchema/authorizationSchema.js'
 import { ErrorContainer } from '../../components/errorConrainer/errorContainer.jsx'
+import { request } from '../../utils/request.js'
 import style from './authorization.module.css'
 import styleInput from '../registretion/styles/input/input.module.css'
 
@@ -19,8 +20,15 @@ export const Authorization = () => {
 		resolver: yupResolver(authFormSchema)
 	})
 
-	const onSubmitLogin = (data) => {
-		console.log(data)
+	const onSubmitLogin = ({ login, password }) => {
+		request('/login', 'POST', { login, password })
+			.then(({ error, user }) => {
+				if (error) {
+					setServerError(error)
+					return
+				}
+				console.log(user)
+			})
 	}
 
 	const formError = errors?.login?.message || errors?.password?.message || errors?.checkPassword?.message

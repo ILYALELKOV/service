@@ -64,8 +64,9 @@
 }
 
 .error_message {
-	color: #c20505;
+	color: #a21515;
 	font-size: 18px;
+	font-weight: 700;
 }
 
 .text_loading {

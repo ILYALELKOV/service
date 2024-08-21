@@ -14,4 +14,20 @@ async function register(login, password) {
 	return user
 }
 
-module.exports = { register }
+async function login(login, password) {
+	const user = await User.findOne({ login })
+
+	if (!user) {
+		throw new Error('User not found')
+	}
+
+	const isPasswordMatch = await bcrypt.compare(password, user.password)
+
+	if (!isPasswordMatch) {
+		throw new Error('Password is incorrect')
+	}
+
+	return { user }
+}
+
+module.exports = { register, login }
