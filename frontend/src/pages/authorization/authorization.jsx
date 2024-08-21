@@ -6,11 +6,15 @@ import { useState } from 'react'
 import { authFormSchema } from './authorizationSchema/authorizationSchema.js'
 import { ErrorContainer } from '../../components/errorConrainer/errorContainer.jsx'
 import { request } from '../../utils/request.js'
+import { useDispatch } from 'react-redux'
+import { setUser } from '../../redux/actions/set-user.js'
 import style from './authorization.module.css'
 import styleInput from '../registretion/styles/input/input.module.css'
 
 export const Authorization = () => {
 	const [serverError, setServerError] = useState(null)
+
+	const dispatch = useDispatch()
 
 	const { register, handleSubmit, formState: { errors } } = useForm({
 		defaultValues: {
@@ -27,7 +31,7 @@ export const Authorization = () => {
 					setServerError(error)
 					return
 				}
-				console.log(user)
+				dispatch(setUser(user))
 			})
 	}
 
