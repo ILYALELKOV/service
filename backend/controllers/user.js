@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt')
 const User = require('../models/User')
+const { generate } = require('../helpers/token')
 
 
 async function register(login, password) {
@@ -27,7 +28,9 @@ async function login(login, password) {
 		throw new Error('Password is incorrect')
 	}
 
-	return { user }
+	const token = generate({ id: user.id })
+
+	return { user, token }
 }
 
 module.exports = { register, login }

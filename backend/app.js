@@ -24,7 +24,8 @@ app.post('/login', async (req, res) => {
 	try {
 		const { user, token } = await login(req.body.login, req.body.password)
 
-		res.send({ error: null, user })
+		res.cookie('token', token, { httpOnly: true })
+			.send({ error: null, user })
 	} catch (error) {
 		res.send({ error: error.message || 'Unknown error' })
 	}
