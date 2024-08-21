@@ -13,8 +13,10 @@ app.use(cookieParser())
 
 app.post('/register', async (req, res) => {
 	try {
-		const user = await register(req.body.login, req.body.password)
-		res.send({ error: null, user })
+		const { user, token } = await register(req.body.login, req.body.password)
+
+		res.cookie('token', token, { httpOnly: true })
+			.send({ error: null, user })
 	} catch (error) {
 		res.send({ error: error.message || 'Unknown error' })
 	}
