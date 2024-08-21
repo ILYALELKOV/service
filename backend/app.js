@@ -34,7 +34,8 @@ app.post('/login', async (req, res) => {
 })
 
 app.post('/logout', (req, res) => {
-	res.send({})
+	res.cookie('token', '', { httpOnly: true })
+		.send({})
 })
 
 mongoose.connect('mongodb+srv://Ilya:Ilyaasasin99@cluster0.buslwrr.mongodb.net/metroluxe?retryWrites=true&w=majority&appName=Cluster0')
