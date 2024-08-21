@@ -1,9 +1,20 @@
 import { Link } from 'react-router-dom'
 import { Input } from '../input/input.jsx'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectUserLogin } from '../../redux/selectors/index.js'
+import { logout } from '../../redux/actions/index.js'
 import mainInputStyle from './styles/input/main_input.module.css'
 import style from './header.module.css'
 
 export const Header = () => {
+
+	const userName = useSelector(selectUserLogin)
+	const dispatch = useDispatch()
+
+	const onLogOut = () => {
+		dispatch(logout())
+	}
+
 	return (
 		<div className={style.container}>
 			<Link to="/">
@@ -34,16 +45,30 @@ export const Header = () => {
 
 			<div className={style.user_container}>
 				<div className={style.user_logo}></div>
-				<h3>User ???</h3>
+				{userName === null
+					? <div>
+						<p className={style.user_name_default}>Зайдите в </p>
+						<p className={style.user_name_default}>аккаунт</p>
+					</div>
+					: <h3 className={style.user_name}>{userName}</h3>}
 			</div>
 
-			<Link to="/login">
-				<div className={style.login_container}>
-					<div className={style.login}></div>
-					<h4 className={style.login_link}>Вход / Регистрация</h4>
-				</div>
-			</Link>
-
+			{userName === null
+				? (<Link to="/login">
+					<div className={style.login_container}>
+						<div className={style.log_in_out}></div>
+						<div>
+							<p className={style.logIn_link}>Вход /</p>
+							<p className={style.logIn_link}> Регистрация</p>
+						</div>
+					</div>
+				</Link>)
+				: (
+					<div className={style.login_container} onClick={onLogOut}>
+						<div className={style.log_in_out}></div>
+						<h4 className={style.logOut_link}>Выйти из аккаунта</h4>
+					</div>
+				)}
 		</div>
 	)
 }

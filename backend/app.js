@@ -25,10 +25,13 @@ app.post('/login', async (req, res) => {
 		const { user, token } = await login(req.body.login, req.body.password)
 
 		res.send({ error: null, user })
-
 	} catch (error) {
 		res.send({ error: error.message || 'Unknown error' })
 	}
+})
+
+app.post('/logout', (req, res) => {
+	res.send({})
 })
 
 mongoose.connect('mongodb+srv://Ilya:Ilyaasasin99@cluster0.buslwrr.mongodb.net/metroluxe?retryWrites=true&w=majority&appName=Cluster0')

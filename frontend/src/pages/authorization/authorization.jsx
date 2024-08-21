@@ -1,13 +1,14 @@
 import { Input } from '../../components/input/input.jsx'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useState } from 'react'
 import { authFormSchema } from './authorizationSchema/authorizationSchema.js'
 import { ErrorContainer } from '../../components/errorConrainer/errorContainer.jsx'
 import { request } from '../../utils/request.js'
-import { useDispatch } from 'react-redux'
-import { setUser } from '../../redux/actions/set-user.js'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectUserLogin } from '../../redux/selectors/index.js'
+import { setUser } from '../../redux/actions/index.js'
 import style from './authorization.module.css'
 import styleInput from '../registretion/styles/input/input.module.css'
 
@@ -15,6 +16,7 @@ export const Authorization = () => {
 	const [serverError, setServerError] = useState(null)
 
 	const dispatch = useDispatch()
+	const userName = useSelector(selectUserLogin)
 
 	const { register, handleSubmit, formState: { errors } } = useForm({
 		defaultValues: {
@@ -33,6 +35,10 @@ export const Authorization = () => {
 				}
 				dispatch(setUser(user))
 			})
+	}
+
+	if (userName !== null) {
+		return <Navigate to="/" />
 	}
 
 	const formError = errors?.login?.message || errors?.password?.message || errors?.checkPassword?.message

@@ -1,5 +1,5 @@
 import { ROLE } from '../../constans/index.js'
-import { ACTION_TYPE } from '../actions/action-type.js'
+import { ACTION_TYPE } from '../actions/index.js'
 
 const initialState = {
 	id: null,
@@ -16,6 +16,11 @@ export const userReducer = (state = initialState, action) => {
 				...action.payload
 			}
 		}
+		case ACTION_TYPE.LOGOUT: {
+			return initialState
+
+		}
+
 		default:
 			return state
 	}
