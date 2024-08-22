@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setUser } from '../../redux/actions/index.js'
 import { selectUserRole } from '../../redux/selectors/index.js'
 import { ServerError } from '../../components/serverError/serverError.jsx'
+import { ROLE } from '../../constans/index.js'
 import style from './registration.module.css'
 import styleInput from './styles/input/input.module.css'
 
@@ -42,7 +43,7 @@ export const Registration = () => {
 
 	const formError = errors?.login?.message || errors?.password?.message || errors?.checkPassword?.message
 //TODO необходимо проверить условия
-	if (roleId === 1 || roleId === 0) {
+	if (roleId === ROLE.USER || roleId === ROLE.ADMIN) {
 		return <Navigate to="/" />
 	}
 

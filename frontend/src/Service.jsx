@@ -7,9 +7,30 @@ import { Registration } from './pages/registretion/registration.jsx'
 import { Authorization } from './pages/authorization/authorization.jsx'
 import { Footer } from './components/footer/footer.jsx'
 import { Admin } from './pages/admin/admin.jsx'
+import { useLayoutEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { setUser } from './redux/actions/index.js'
 import './App.css'
 
 function Service() {
+
+	const dispatch = useDispatch()
+
+	useLayoutEffect(() => {
+		const currentUserDataJSON = sessionStorage.getItem('userData')
+
+		if (!currentUserDataJSON) {
+			return
+		}
+
+		const currentUserData = JSON.parse(currentUserDataJSON)
+
+		dispatch(setUser({
+			...currentUserData,
+			roleId: Number(currentUserData.roleId)
+		}))
+	})
+
 	return (
 		<div className="app_container">
 			<Header />

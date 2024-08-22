@@ -35,6 +35,7 @@ export const Authorization = () => {
 					return
 				}
 				dispatch(setUser(user))
+				sessionStorage.setItem('userData', JSON.stringify(user))
 			})
 	}
 //TODO продумать навигацию, при каких именно условиях
