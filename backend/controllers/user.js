@@ -35,4 +35,5 @@ async function login(login, password) {
 	return { user, token }
 }
 
+
 module.exports = { register, login }

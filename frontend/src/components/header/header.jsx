@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Input } from '../input/input.jsx'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectUserLogin } from '../../redux/selectors/index.js'
+import { selectUserLogin, selectUserRole } from '../../redux/selectors/index.js'
 import { logout } from '../../redux/actions/index.js'
 import mainInputStyle from './styles/input/main_input.module.css'
 import style from './header.module.css'
@@ -9,6 +9,7 @@ import style from './header.module.css'
 export const Header = () => {
 
 	const userName = useSelector(selectUserLogin)
+	const userRole = useSelector(selectUserRole)
 	const dispatch = useDispatch()
 
 	const onLogOut = () => {
@@ -66,9 +67,22 @@ export const Header = () => {
 				: (
 					<div className={style.login_container} onClick={onLogOut}>
 						<div className={style.log_in_out}></div>
-						<h4 className={style.logOut_link}>Выйти из аккаунта</h4>
+						<h4 className={style.logOut_link}>Выйти</h4>
+						<h4 className={style.logOut_link}> из аккаунта</h4>
 					</div>
 				)}
+			{userRole === 0
+				? (
+					<Link to="/admin">
+						<div className={style.admin_container}>
+							<div className={style.admin}></div>
+							<p>Панель</p>
+							<p>администратора</p>
+						</div>
+					</Link>
+				)
+				: null
+			}
 		</div>
 	)
 }

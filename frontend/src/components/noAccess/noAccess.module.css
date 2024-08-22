@@ -1,0 +1,33 @@
+.error_access_container {
+	background: #8E0E00; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	height: 500px;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 1280px;
+	padding: 10px 20px;
+}
+
+.error_access_button {
+	margin-top: 50px;
+	width: 300px;
+	font-size: 20px;
+	font-weight: bold;
+	background: #12c2e9; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.error_access_button:hover {
+	transition: 0.7s ease-in-out;
+	box-shadow: 1px 5px 8px #f0f4f0;
+	color: white;
+}
+
+.error_access_container > h1 {
+	color: #ffffff;
+}
