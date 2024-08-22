@@ -9,6 +9,7 @@ import { request } from '../../utils/request.js'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectUserLogin } from '../../redux/selectors/index.js'
 import { setUser } from '../../redux/actions/index.js'
+import { ServerError } from '../../components/serverError/serverError.jsx'
 import style from './authorization.module.css'
 import styleInput from '../registretion/styles/input/input.module.css'
 
@@ -36,7 +37,7 @@ export const Authorization = () => {
 				dispatch(setUser(user))
 			})
 	}
-
+//TODO продумать навигацию, при каких именно условиях
 	if (userName !== null) {
 		return <Navigate to="/" />
 	}
@@ -55,6 +56,7 @@ export const Authorization = () => {
 									 autoComplete="new-password" />
 						<ErrorContainer errors={errors} />
 					</div>
+					{serverError && <ServerError errorMessage={serverError} />}
 					<div className={style.button_container}>
 						<button disabled={!!formError} type="submit">Войти</button>
 						<Link to="/">

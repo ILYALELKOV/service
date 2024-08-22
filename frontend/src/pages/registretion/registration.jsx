@@ -1,16 +1,22 @@
 import { Input } from '../../components/input/input.jsx'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { regFormSchema } from './registrationSchema/registrationSchema.js'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useState } from 'react'
 import { ErrorContainer } from '../../components/errorConrainer/errorContainer.jsx'
 import { request } from '../../utils/request.js'
+import { useDispatch, useSelector } from 'react-redux'
+import { setUser } from '../../redux/actions/index.js'
+import { selectUserRole } from '../../redux/selectors/index.js'
 import style from './registration.module.css'
 import styleInput from './styles/input/input.module.css'
 
 export const Registration = () => {
 	const [serverError, setServerError] = useState(null)
+
+	const dispatch = useDispatch()
+	const roleId = useSelector(selectUserRole)
 
 	const { register, handleSubmit, formState: { errors } } = useForm({
 		defaultValues: {
@@ -28,11 +34,17 @@ export const Registration = () => {
 					setServerError(error.error)
 					return
 				}
+				dispatch(setUser(user))
+				sessionStorage.setItem('userData', JSON.stringify(user))
 			})
 	}
 
 	const formError = errors?.login?.message || errors?.password?.message || errors?.checkPassword?.message
-	const errorMessage = formError || serverError
+	// const errorMessage = formError || serverError
+
+	if (roleId === 1 || roleId === 0) {
+		return <Navigate to="/" />
+	}
 
 	return (
 		<>
@@ -46,7 +58,7 @@ export const Registration = () => {
 									 autoComplete="new-password" />
 						<Input {...register('checkPassword')} text="Повтор пароля..." type="password" styleClass={styleInput}
 									 autoComplete="new-password" />
-						<ErrorContainer errors={errors} />
+						< ErrorContainer errors={errors} />
 					</div>
 
 					<div className={style.button_container}>

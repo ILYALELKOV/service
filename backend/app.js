@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
 const path = require('path')
 const chalk = require('chalk')
+const mapUser = require('./helpers/mapUser')
 const { register, login } = require('./controllers/user')
 
 const port = 3001
@@ -16,7 +17,7 @@ app.post('/register', async (req, res) => {
 		const { user, token } = await register(req.body.login, req.body.password)
 
 		res.cookie('token', token, { httpOnly: true })
-			.send({ error: null, user })
+			.send({ error: null, user: mapUser(user) })
 	} catch (error) {
 		res.send({ error: error.message || 'Unknown error' })
 	}
@@ -27,7 +28,7 @@ app.post('/login', async (req, res) => {
 		const { user, token } = await login(req.body.login, req.body.password)
 
 		res.cookie('token', token, { httpOnly: true })
-			.send({ error: null, user })
+			.send({ error: null, user: mapUser(user) })
 	} catch (error) {
 		res.send({ error: error.message || 'Unknown error' })
 	}

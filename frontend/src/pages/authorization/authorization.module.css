@@ -109,3 +109,9 @@
 .error_container > p {
 	margin: 7px 0;
 }
+
+.server_error_message {
+	color: #b01414;
+	font-size: 16px;
+	font-weight: bold;
+}
