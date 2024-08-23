@@ -4,7 +4,7 @@ export const Main = () => {
 
 	return (
 		<div className={styles.container}>
-			<h1>Hello from main page</h1>
+			<h1>Доступные номера</h1>
 		</div>
 	)
 }
