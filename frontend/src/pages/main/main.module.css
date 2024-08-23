@@ -1,8 +1,15 @@
-.container {
+.rooms_container {
 	width: 1280px;
-	height: 80%;
-	background-color: #e0de40;
+	height: 90%;
+	background-color: #d2d2d6;
 	padding: 10px 20px;
 	border-radius: 5px;
 	margin-bottom: 20px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+}
+
+h1 {
+	margin: 20px 0;
 }

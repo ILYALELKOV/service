@@ -16,6 +16,10 @@ export default defineConfig({
 			'/logout': {
 				target: 'http://localhost:3001',
 				changeOrigin: true
+			},
+			'/rooms': {
+				target: 'http://localhost:3001',
+				changeOrigin: true
 			}
 		}
 	}

@@ -1,10 +1,40 @@
 import styles from './main.module.css'
+import { useEffect, useState } from 'react'
+import { request } from '../../utils/request.js'
+import { RoomCard } from '../../components/roomCart/roomCard.jsx'
+import Loader from '../../components/loader/loader.jsx'
 
 export const Main = () => {
 
+	const [rooms, setRooms] = useState([])
+
+	useEffect(() => {
+		request('/rooms')
+			.then((res) => {
+				setRooms(res)
+			})
+
+	})
+
 	return (
-		<div className={styles.container}>
+		<>
 			<h1>Доступные номера</h1>
-		</div>
+			{rooms.length > 0
+				? (
+					<div className={styles.rooms_container}>
+						{rooms.map((room) => (
+							<RoomCard key={room._id}
+												url={room.photos[0]}
+												price={room.price}
+												amenities={room.amenities}
+												size={room.size}
+												name={room.name}
+												id={room._id}
+							/>
+						))}
+					</div>
+				)
+				: <Loader />}
+		</>
 	)
 }
