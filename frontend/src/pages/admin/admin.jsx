@@ -29,10 +29,10 @@ export const Admin = () => {
 						{rooms
 							? (
 								rooms.map((room) => (
-									<div className={style.room_item} key={room._id}>
+									<div className={room.isAvailable ? style.room_item : style.reserved_room} key={room._id}>
 										<p className={style.id_number}>{room.name}</p>
 										<img className={style.room_image} src={room.photos[0]} alt="" />
-										<button className={style.cancel_reservation}>Снять бронь</button>
+										{!room.isAvailable && <button className={style.cancel_reservation}>Снять бронь</button>}
 									</div>
 								))
 							)

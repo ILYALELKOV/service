@@ -3,6 +3,7 @@ import { Input } from '../input/input.jsx'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectUserLogin, selectUserRole } from '../../redux/selectors/index.js'
 import { logout } from '../../redux/actions/index.js'
+import { ROLE } from '../../constans/index.js'
 import mainInputStyle from './styles/input/main_input.module.css'
 import style from './header.module.css'
 
@@ -71,7 +72,7 @@ export const Header = () => {
 						<h4 className={style.logOut_link}> из аккаунта</h4>
 					</div>
 				)}
-			{userRole === 0
+			{userRole === ROLE.ADMIN
 				? (
 					<Link to="/admin">
 						<div className={style.admin_container}>

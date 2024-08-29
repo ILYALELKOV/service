@@ -16,7 +16,7 @@
 .card_img {
 	width: 300px;
 	height: 200px;
-	border-radius: 5px;
+	border-radius: 5px 5px 0 5px;
 }
 
 .card_description {
@@ -24,7 +24,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	padding: 5px 5px 0 5px;
+	/*padding: 5px 5px 0 5px;*/
 }
 
 .card_description > p:nth-child(1) {
@@ -33,22 +33,16 @@
 	line-height: 1.1;
 }
 
-.card_button {
-	width: 110px;
-	height: 35px;
-	font-size: 13px;
+.room_price {
 	font-weight: bold;
-	margin: 0 auto;
-	border-radius: 5px;
-	background: #dde319;
-	padding: 0;
+	background: #36D1DC; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	height: 35px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	border-radius: 0 0 5px 0;
 }
 
-.card_button:hover {
-	outline: none;
-	background: #0cebeb; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	box-shadow: 1px 5px 8px #f0f4f0;
-	transition: 0.9s ease;
-}

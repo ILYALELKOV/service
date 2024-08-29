@@ -15,7 +15,20 @@
 }
 
 .room_item {
-	background: #16a016;
+	background: #11998e; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #38ef7d, #11998e); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	border-radius: 5px;
+	height: 220px;
+	width: 300px;
+	margin: 0 auto;
+	padding: 15px;
+}
+
+.reserved_room {
+	background: #F7971E; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #FFD200, #F7971E); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	border-radius: 5px;
 	height: 220px;
 	width: 300px;
@@ -50,6 +63,6 @@
 }
 
 .cancel_reservation:hover {
-	box-shadow: 1px 5px 8px #bb1717;
+	box-shadow: 1px 6px 8px #fffdfd;
 	transition: 0.9s ease;
 }

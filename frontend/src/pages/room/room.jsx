@@ -4,9 +4,9 @@ import { request } from '../../utils/request.js'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { selectUserRole } from '../../redux/selectors/index.js'
+import { ROLE } from '../../constans/index.js'
 import Loader from '../../components/loader/loader.jsx'
 import style from './room.module.css'
-import { ROLE } from '../../constans/index.js'
 
 export const Room = () => {
 	const [room, setRoom] = useState(null)
@@ -18,9 +18,6 @@ export const Room = () => {
 		request(`/room/${id}`)
 			.then((res) => setRoom(res))
 	})
-
-	//TODO доступ должен быть только пользователям, которые зашли
-
 
 	return (
 		<>
@@ -53,7 +50,7 @@ export const Room = () => {
 						</div>
 						{userRole === ROLE.GUEST
 							? (
-								<div className={style.error_message}>Зарегистрируйтесь, что бы иметь возможность забронировать
+								<div className={style.error_message}>Войдите в свой аккаунт, что бы иметь возможность забронировать
 									номер</div>
 							)
 							: (

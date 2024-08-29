@@ -30,6 +30,7 @@ export const Main = () => {
 												size={room.size}
 												name={room.name}
 												id={room._id}
+												isAvailable={room.isAvailable}
 							/>
 						))}
 					</div>

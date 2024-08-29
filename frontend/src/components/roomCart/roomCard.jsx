@@ -1,9 +1,7 @@
 import { useNavigate } from 'react-router'
 import style from './roomCard.module.css'
-import { useSelector } from 'react-redux'
-import { selectUserRole } from '../../redux/selectors/index.js'
 
-export const RoomCard = ({ url, price, size, name, id }) => {
+export const RoomCard = ({ url, price, size, name, id, isAvailable }) => {
 
 	const navigate = useNavigate()
 
@@ -12,16 +10,19 @@ export const RoomCard = ({ url, price, size, name, id }) => {
 	}
 
 	return (
-		<div className={style.card} onClick={() => handleClick(id)}>
-			<div>
-				<img className={style.card_img} src={url} alt="room" />
-			</div>
-			<div className={style.card_description}>
-				<p>{name}</p>
-				<p>Цена: {price}$</p>
-				<p>Площадь: {size}</p>
-				{/*<button className={style.card_button}>Забронировать</button>*/}
-			</div>
-		</div>
+		<>
+			{isAvailable && (
+				<div className={style.card} onClick={() => handleClick(id)}>
+					<div>
+						<img className={style.card_img} src={url} alt="room" />
+					</div>
+					<div className={style.card_description}>
+						<p>{name}</p>
+						<p>Площадь: {size}</p>
+						<p className={style.room_price}>Цена: {price}$</p>
+					</div>
+				</div>
+			)}
+		</>
 	)
 }
