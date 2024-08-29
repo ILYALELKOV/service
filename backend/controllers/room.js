@@ -4,5 +4,9 @@ async function getRooms() {
 	return Room.find()
 }
 
+function getRoom(id) {
+	return Room.findById(id)
+}
 
-module.exports = { getRooms }
+
+module.exports = { getRooms, getRoom }

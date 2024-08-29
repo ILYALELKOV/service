@@ -10,6 +10,7 @@ import { Admin } from './pages/admin/admin.jsx'
 import { useLayoutEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { setUser } from './redux/actions/index.js'
+import { Room } from './pages/room/room.jsx'
 import './App.css'
 
 function Service() {
@@ -32,7 +33,7 @@ function Service() {
 	})
 
 	return (
-		<div className="app_container">
+		<div className="app_container">r
 			<Header />
 			<div className="content">
 				<Routes>
@@ -40,6 +41,7 @@ function Service() {
 					<Route path="/login" element={<Authorization />} />
 					<Route path="/register" element={<Registration />} />
 					<Route path="/admin" element={<Admin />} />
+					<Route path="/room/:id" element={<Room />} />
 					<Route path="*" element={<ErrorPage error={ERROR.PAGE_NOT_EXIST} />} />
 				</Routes>
 			</div>

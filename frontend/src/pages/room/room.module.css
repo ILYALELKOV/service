@@ -1,0 +1,83 @@
+h3 {
+	margin: 7px 0;
+}
+
+ul {
+	margin: 0;
+}
+
+.container {
+	background: #ADA996; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	border-radius: 5px;
+	width: 1280px;
+	padding: 10px 20px;
+}
+
+.room_container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.room_image {
+	width: 700px;
+	height: 500px;
+	border-radius: 5px;
+}
+
+.description_container {
+	padding: 35px 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.amenities {
+	list-style: none;
+	padding: 0;
+}
+
+.rent_button {
+	background: #dde319;
+	width: 250px;
+	height: 50px;
+	font-size: 20px;
+}
+
+.price {
+	font-size: 25px
+}
+
+.rent_button:hover {
+	outline: none;
+	background: #0cebeb; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	box-shadow: 1px 5px 8px #f0f4f0;
+	transition: 0.9s ease;
+}
+
+.main_page_button {
+	width: 300px;
+	height: 60px;
+	margin: 50px auto;
+	border: none;
+	font-size: 20px;
+	color: white;
+	background: #5433FF; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #A5FECB, #20BDFF, #5433FF); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #A5FECB, #20BDFF, #5433FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.main_page_button:hover {
+	background: #314755; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #26a0da, #314755); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #26a0da, #314755); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

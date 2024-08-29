@@ -9,7 +9,8 @@
 
 .card:hover {
 	cursor: pointer;
-	box-shadow: 0 5px 5px #b01414;
+	box-shadow: 0 5px 5px #2ff987;
+	transition: 0.9s ease;
 }
 
 .card_img {

@@ -5,7 +5,8 @@ const path = require('path')
 const chalk = require('chalk')
 const mapUser = require('./helpers/mapUser')
 const { register, login } = require('./controllers/user')
-const { getRooms } = require('./controllers/room')
+const { getRooms, getRoom } = require('./controllers/room')
+const { json } = require('express')
 
 const port = 3001
 const app = express()
@@ -43,6 +44,11 @@ app.post('/logout', (req, res) => {
 app.get('/rooms', async (req, res) => {
 	const rooms = await getRooms()
 	res.send(rooms)
+})
+
+app.get('/room/:id', async (req, res) => {
+	const room = await getRoom(req.params.id)
+	res.send(room)
 })
 
 mongoose.connect('mongodb+srv://Ilya:Ilyaasasin99@cluster0.buslwrr.mongodb.net/metroluxe?retryWrites=true&w=majority&appName=Cluster0')
