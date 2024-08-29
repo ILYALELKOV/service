@@ -1,19 +1,25 @@
 import { useParams } from 'react-router'
 import { useEffect, useState } from 'react'
 import { request } from '../../utils/request.js'
+import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { selectUserRole } from '../../redux/selectors/index.js'
 import Loader from '../../components/loader/loader.jsx'
 import style from './room.module.css'
-import { Link } from 'react-router-dom'
+import { ROLE } from '../../constans/index.js'
 
 export const Room = () => {
 	const [room, setRoom] = useState(null)
 
 	const { id } = useParams()
+	const userRole = useSelector(selectUserRole)
 
 	useEffect(() => {
 		request(`/room/${id}`)
 			.then((res) => setRoom(res))
 	})
+
+	//TODO доступ должен быть только пользователям, которые зашли
 
 
 	return (
@@ -45,7 +51,14 @@ export const Room = () => {
 							<h3>Цена:</h3>
 							<p className={style.price}>{room.price}$</p>
 						</div>
-						<button className={style.rent_button}>Арендовать</button>
+						{userRole === ROLE.GUEST
+							? (
+								<div className={style.error_message}>Зарегистрируйтесь, что бы иметь возможность забронировать
+									номер</div>
+							)
+							: (
+								<button className={style.rent_button}>Забронировать</button>
+							)}
 					</div>
 				</div>
 			) : (

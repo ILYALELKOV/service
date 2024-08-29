@@ -33,7 +33,7 @@ function Service() {
 	})
 
 	return (
-		<div className="app_container">r
+		<div className="app_container">
 			<Header />
 			<div className="content">
 				<Routes>

@@ -1,0 +1,55 @@
+.container {
+	background: #E0EAFC; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	width: 1280px;
+	height: 900px;
+	padding: 10px 20px;
+	border-radius: 5px;
+}
+
+.room_container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+}
+
+.room_item {
+	background: #16a016;
+	border-radius: 5px;
+	height: 220px;
+	width: 300px;
+	margin: 0 auto;
+	padding: 15px;
+}
+
+.room_image {
+	width: 200px;
+	height: 150px;
+}
+
+.id_number {
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+.status {
+	margin: 0;
+}
+
+.cancel_reservation {
+	background: #333333; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #dd1818, #333333); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #dd1818, #333333); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: white;
+	border: none;
+	margin-top: 5px;
+	width: 150px;
+	height: 30px;
+	padding: 0 5px;
+}
+
+.cancel_reservation:hover {
+	box-shadow: 1px 5px 8px #bb1717;
+	transition: 0.9s ease;
+}

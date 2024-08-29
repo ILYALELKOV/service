@@ -81,3 +81,15 @@ ul {
 	background: -webkit-linear-gradient(to right, #26a0da, #314755); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #26a0da, #314755); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+.error_message {
+	font-size: 25px;
+	color: #fbfbfb;
+	font-weight: 700;
+	background: #8E0E00; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 1px 5px 4px #050505;
+}

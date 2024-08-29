@@ -14,7 +14,7 @@ export const Main = () => {
 				setRooms(res)
 			})
 
-	})
+	}, [rooms])
 
 	return (
 		<>
