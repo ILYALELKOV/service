@@ -29,6 +29,7 @@ ul {
 	width: 700px;
 	height: 500px;
 	border-radius: 5px;
+	box-shadow: 1px 3px 3px #393d39;
 }
 
 .description_container {
@@ -49,6 +50,7 @@ ul {
 	width: 250px;
 	height: 50px;
 	font-size: 20px;
+	box-shadow: 1px 3px 3px #393d39;
 }
 
 .price {
@@ -74,6 +76,7 @@ ul {
 	background: #5433FF; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #A5FECB, #20BDFF, #5433FF); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #A5FECB, #20BDFF, #5433FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	box-shadow: 1px 3px 8px #040303;
 }
 
 .main_page_button:hover {

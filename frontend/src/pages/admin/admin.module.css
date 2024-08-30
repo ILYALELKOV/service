@@ -23,6 +23,7 @@
 	width: 300px;
 	margin: 0 auto;
 	padding: 15px;
+	box-shadow: 1px 3px 3px #393d39;
 }
 
 .reserved_room {
@@ -34,11 +35,13 @@
 	width: 300px;
 	margin: 0 auto;
 	padding: 15px;
+	box-shadow: 1px 3px 3px #393d39;
 }
 
 .room_image {
 	width: 200px;
 	height: 150px;
+	border-radius: 5px;
 }
 
 .id_number {
@@ -54,6 +57,7 @@
 	background: #333333; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #dd1818, #333333); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #dd1818, #333333); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	box-shadow: 1px 3px 3px #393d39;
 	color: white;
 	border: none;
 	margin-top: 5px;

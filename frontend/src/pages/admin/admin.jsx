@@ -12,35 +12,48 @@ export const Admin = () => {
 	const userRole = useSelector(selectUserRole)
 
 	const [rooms, setRooms] = useState([])
+	const [isLoading, setIsLoading] = useState(true)
 
 	useEffect(() => {
 		request('/rooms')
 			.then((res) => setRooms(res))
-	})
+			.finally(() => setIsLoading(false))
+	}, [])
+
+	//TODO необходимо создать компонент, который скажет что доступных номеров нет
 
 	return (
 		<div>
-			{userRole !== ROLE.ADMIN
-				? <NoAccess />
-				:
+			{userRole !== ROLE.ADMIN ? (
+				<NoAccess />
+			) : (
 				<div className={style.container}>
 					<h1>Статус номеров</h1>
-					<div className={style.room_container}>
-						{rooms
-							? (
-								rooms.map((room) => (
-									<div className={room.isAvailable ? style.room_item : style.reserved_room} key={room._id}>
+					{isLoading ? (
+						<Loader />
+					) : (
+						rooms.length > 0 ? (
+							<div className={style.room_container}>
+								{rooms.map((room) => (
+									<div
+										className={room.isAvailable ? style.room_item : style.reserved_room}
+										key={room._id}
+									>
 										<p className={style.id_number}>{room.name}</p>
 										<img className={style.room_image} src={room.photos[0]} alt="" />
-										{!room.isAvailable && <button className={style.cancel_reservation}>Снять бронь</button>}
+										{!room.isAvailable && (
+											<button className={style.cancel_reservation}>Снять бронь</button>
+										)}
 									</div>
-								))
-							)
-							: (<Loader />)
-						}
-					</div>
+								))}
+							</div>
+						) : (
+							<p>Нет доступных номеров.</p>
+						)
+					)}
 				</div>
-			}
+			)}
 		</div>
 	)
 }
+

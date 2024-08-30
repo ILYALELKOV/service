@@ -11,8 +11,8 @@ import { useLayoutEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { setUser } from './redux/actions/index.js'
 import { Room } from './pages/room/room.jsx'
-import './App.css'
 import { CookieModal } from './components/cookieModal/cookieModal.jsx'
+import './App.css'
 
 function Service() {
 

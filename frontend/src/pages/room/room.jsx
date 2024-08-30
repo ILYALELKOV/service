@@ -17,7 +17,7 @@ export const Room = () => {
 	useEffect(() => {
 		request(`/room/${id}`)
 			.then((res) => setRoom(res))
-	})
+	}, [])
 
 	return (
 		<>

@@ -56,11 +56,13 @@
 	justify-content: center;
 	gap: 20px;
 	font-weight: 700;
+	color: #f9f9fa;
+	text-shadow: -1px 3px 2px #393d39;
 }
 
 .weather_container p {
 	margin: 10px;
-	font-size: 16px;
+	font-size: 17px;
 }
 
 .error_message {
