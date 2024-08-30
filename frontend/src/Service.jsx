@@ -12,6 +12,7 @@ import { useDispatch } from 'react-redux'
 import { setUser } from './redux/actions/index.js'
 import { Room } from './pages/room/room.jsx'
 import './App.css'
+import { CookieModal } from './components/cookieModal/cookieModal.jsx'
 
 function Service() {
 
@@ -45,6 +46,7 @@ function Service() {
 					<Route path="*" element={<ErrorPage error={ERROR.PAGE_NOT_EXIST} />} />
 				</Routes>
 			</div>
+			<CookieModal />
 			<Footer />
 		</div>
 	)

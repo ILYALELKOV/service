@@ -1,0 +1,79 @@
+.modal {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 180px;
+	background: #12c2e9; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	box-shadow: 0 -2px 25px #070707;
+}
+
+.modal-content {
+	background-color: white;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	width: 80%;
+	max-width: 500px;
+	text-align: center;
+}
+
+.modalHeader {
+	color: white;
+	margin: 10px;
+}
+
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	cursor: pointer;
+}
+
+.modalText {
+	color: #fffefe;
+	font-size: 18px;
+}
+
+.modalButtonAgreement {
+	padding: 10px 20px;
+	width: 250px;
+	background: #a8ff78; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: #101010;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin: 15px 50px;
+}
+
+.modalButtonAgreement:hover {
+	box-shadow: 0 10px 10px 0 rgb(250, 250, 250);
+	transition: 0.9s ease;
+}
+
+.modalButtonRefusal {
+	padding: 10px 20px;
+	width: 250px;
+	background: #8E0E00; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: #f8f5f5;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin: 15px 50px;
+}
+
+.modalButtonRefusal:hover {
+	box-shadow: 0 10px 10px 0 rgb(250, 250, 250);
+	transition: 0.9s ease;
+}
+
