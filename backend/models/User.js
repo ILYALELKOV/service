@@ -14,7 +14,12 @@ const UserSchema = mongoose.Schema({
 	role: {
 		type: Number,
 		default: roles.USER
-	}
+	},
+	bookedRooms: [{
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'Room',
+		required: true
+	}]
 }, { timestamps: true })
 
 const User = mongoose.model('User', UserSchema)

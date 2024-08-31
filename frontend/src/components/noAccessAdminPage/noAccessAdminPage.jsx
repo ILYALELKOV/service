@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import style from './noAccess.module.css'
+import style from './noAccessAdminPage.module.css'
 
-export const NoAccess = () => {
+export const NoAccessAdminPage = () => {
 	return (
 		<div className={style.error_access_container}>
 			<h1>У вас нет прав доступа к этой странице</h1>

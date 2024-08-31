@@ -24,13 +24,13 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	/*padding: 5px 5px 0 5px;*/
 }
 
 .card_description > p:nth-child(1) {
 	color: #3b56e2;
 	font-weight: bold;
 	line-height: 1.1;
+	text-shadow: -1px 2px 2px #939393;
 }
 
 .room_price {

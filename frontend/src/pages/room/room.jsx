@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { request } from '../../utils/request.js'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { selectUserRole } from '../../redux/selectors/index.js'
+import { selectUserRole, selectUserId } from '../../redux/selectors/index.js'
 import { ROLE } from '../../constans/index.js'
 import Loader from '../../components/loader/loader.jsx'
 import style from './room.module.css'
@@ -13,11 +13,17 @@ export const Room = () => {
 
 	const { id } = useParams()
 	const userRole = useSelector(selectUserRole)
+	const userId = useSelector(selectUserId)
 
 	useEffect(() => {
 		request(`/room/${id}`)
 			.then((res) => setRoom(res))
 	}, [])
+
+	const bookedRoom = () => {
+		console.log('Booked!', userId)
+		fetch(id, userId)
+	}
 
 	return (
 		<>
@@ -54,7 +60,7 @@ export const Room = () => {
 									номер</div>
 							)
 							: (
-								<button className={style.rent_button}>Забронировать</button>
+								<button className={style.rent_button} onClick={bookedRoom}>Забронировать</button>
 							)}
 					</div>
 				</div>

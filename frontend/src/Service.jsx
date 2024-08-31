@@ -12,6 +12,7 @@ import { useDispatch } from 'react-redux'
 import { setUser } from './redux/actions/index.js'
 import { Room } from './pages/room/room.jsx'
 import { CookieModal } from './components/cookieModal/cookieModal.jsx'
+import { UserAccount } from './pages/userAccount/userAccount.jsx'
 import './App.css'
 
 function Service() {
@@ -43,6 +44,7 @@ function Service() {
 					<Route path="/register" element={<Registration />} />
 					<Route path="/admin" element={<Admin />} />
 					<Route path="/room/:id" element={<Room />} />
+					<Route path="/account" element={<UserAccount />} />
 					<Route path="*" element={<ErrorPage error={ERROR.PAGE_NOT_EXIST} />} />
 				</Routes>
 			</div>

@@ -84,6 +84,18 @@ export const Header = () => {
 				)
 				: null
 			}
+			{userRole === ROLE.USER
+				? (
+					<Link to="/account">
+						<div className={style.account_container}>
+							<div className={style.account}></div>
+							<p>Личный</p>
+							<p>кабинет</p>
+						</div>
+					</Link>
+				)
+				: null
+			}
 		</div>
 	)
 }
