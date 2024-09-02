@@ -32,7 +32,7 @@ const Loader = () => {
 				<div></div>
 				<div></div>
 			</div>
-			<h1>Loading...</h1>
+			<h1>Загрузка...</h1>
 		</div>
 	)
 }

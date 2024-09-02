@@ -1,10 +1,6 @@
 import style from './userBookedRoomsCard.module.css'
 
-export const UserBookedRoomsCard = ({ img, name, size, amenities }) => {
-
-	const onDeleteBooked = () => {
-		console.log('DELETE ROOM')
-	}
+export const UserBookedRoomsCard = ({ img, name, size, amenities, onDeleteBooking, id }) => {
 
 	return (
 		<div className={style.room_container}>
@@ -14,12 +10,12 @@ export const UserBookedRoomsCard = ({ img, name, size, amenities }) => {
 			<div className={style.room_description}>
 				<h3>{name}</h3>
 				<ul className={style.amenities}>
-					{amenities.map((item) => (
-						<li className={style.description_amenities}>{item}</li>
+					{amenities.map((item, index) => (
+						<li key={index} className={style.description_amenities}>{item}</li>
 					))}
 				</ul>
 				<h3>{size}</h3>
-				<button onClick={onDeleteBooked} className={style.room_description_button}>Отменить бронь</button>
+				<button onClick={() => onDeleteBooking(id)} className={style.room_description_button}>Отменить бронь</button>
 			</div>
 		</div>
 	)

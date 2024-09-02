@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import history from 'connect-history-api-fallback'
 
 export default defineConfig({
 	plugins: [react()],
@@ -32,8 +33,26 @@ export default defineConfig({
 				changeOrigin: true,
 				rewrite: (path) => path.replace(/^\/user/, '/user')
 			}
+		},
+		setup: (app) => {
+			app.use(
+				history({
+					rewrites: [
+						{
+							from: /^(\/register|\/login|\/logout|\/rooms|\/room|\/user)\/.*$/,
+							to: (context) => context.parsedUrl.pathname
+						},
+						{
+							from: /./,
+							to: '/index.html'
+						}
+					]
+				})
+			)
 		}
 	}
 })
+
+
 
 

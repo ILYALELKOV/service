@@ -19,4 +19,9 @@ async function getBookedRoom(userId) {
 	return userBookRooms
 }
 
-module.exports = { getRooms, getRoom, bookRoom, getBookedRoom }
+async function deleteBooking(userId, roomId) {
+	await Room.findByIdAndUpdate(roomId, { isAvailable: true })
+	await User.findByIdAndUpdate(userId, { $pull: { bookedRooms: roomId } })
+}
+
+module.exports = { getRooms, getRoom, bookRoom, getBookedRoom, deleteBooking }

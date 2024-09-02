@@ -1,4 +1,4 @@
-import { useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import { useEffect, useState } from 'react'
 import { request } from '../../utils/request.js'
 import { Link } from 'react-router-dom'
@@ -14,6 +14,7 @@ export const Room = () => {
 	const { id } = useParams()
 	const userRole = useSelector(selectUserRole)
 	const userId = useSelector(selectUserId)
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		request(`/room/${id}`)
@@ -22,6 +23,7 @@ export const Room = () => {
 
 	const bookedRoom = () => {
 		request(`/room/${id}/booked`, 'POST', { id, userId })
+		navigate('/')
 	}
 
 	return (

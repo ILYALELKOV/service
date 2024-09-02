@@ -9,7 +9,7 @@
 .wrapper > h1 {
 	margin-top: 15px;
 	font-size: 20px;
-	color: #1c92d2;
+	color: #7616eb;
 }
 
 .grid_loader {
@@ -24,9 +24,9 @@
 	height: 15px;
 	margin: 5px;
 	border-radius: 50%;
-	background: #1c92d2; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #f2fcfe, #1c92d2); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #f2fcfe, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #801cd2; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #f2fcfe, #7a1cd2); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #f2fcfe, #6c1aef); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	animation: grid_loader_animation 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
 
