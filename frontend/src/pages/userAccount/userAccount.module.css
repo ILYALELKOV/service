@@ -7,3 +7,11 @@
 	padding: 10px 20px;
 	border-radius: 5px;
 }
+
+.booked_rooms_container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+}
+
+

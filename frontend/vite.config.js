@@ -26,6 +26,11 @@ export default defineConfig({
 				target: 'http://localhost:3001',
 				changeOrigin: true,
 				rewrite: (path) => path.replace(/^\/room/, '/room')
+			},
+			'/user': {
+				target: 'http://localhost:3001',
+				changeOrigin: true,
+				rewrite: (path) => path.replace(/^\/user/, '/user')
 			}
 		}
 	}

@@ -1,0 +1,50 @@
+.room_container {
+	background: #a8c0ff; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #3f2b96, #a8c0ff); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #3f2b96, #a8c0ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	display: flex;
+	justify-content: space-between;
+	border-radius: 5px;
+	width: 600px;
+	height: 300px;
+}
+
+.room_image {
+	width: 400px;
+	height: 100%;
+	border-radius: 5px 0 0 5px;
+}
+
+.room_description {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.amenities {
+	padding: 0;
+}
+
+.description_amenities {
+	list-style: none;
+}
+
+.room_description_button {
+	background: #8E0E00; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	width: 200px;
+	border: none;
+	border-radius: 0 0 5px 0;
+	color: white;
+}
+
+.room_description_button:hover {
+	box-shadow: 1px 6px 8px #fffffe;
+	transition: 0.9s ease;
+	color: yellow;
+}
+
+
+

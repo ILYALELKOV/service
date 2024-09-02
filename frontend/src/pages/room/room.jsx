@@ -21,8 +21,7 @@ export const Room = () => {
 	}, [])
 
 	const bookedRoom = () => {
-		console.log('Booked!', userId)
-		fetch(id, userId)
+		request(`/room/${id}/booked`, 'POST', { id, userId })
 	}
 
 	return (
