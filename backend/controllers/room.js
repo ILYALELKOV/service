@@ -24,4 +24,16 @@ async function deleteBooking(userId, roomId) {
 	await User.findByIdAndUpdate(userId, { $pull: { bookedRooms: roomId } })
 }
 
-module.exports = { getRooms, getRoom, bookRoom, getBookedRoom, deleteBooking }
+async function deleteReservationAdmin(roomId) {
+	const user = await User.findOne({ bookedRooms: roomId })
+
+	if (user) {
+		await User.findByIdAndUpdate(user._id, {
+			$pull: { bookedRooms: roomId }
+		})
+
+		await Room.findByIdAndUpdate(roomId, { isAvailable: true })
+	}
+}
+
+module.exports = { getRooms, getRoom, bookRoom, getBookedRoom, deleteBooking, deleteReservationAdmin }

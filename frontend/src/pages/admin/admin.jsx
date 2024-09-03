@@ -20,6 +20,15 @@ export const Admin = () => {
 			.finally(() => setIsLoading(false))
 	}, [])
 
+	const onDeleteReservation = (roomId) => {
+		setIsLoading(true)
+
+		request(`/room/${roomId}/delete-reservation-admin`, 'POST')
+			.then(() => request('/rooms'))
+			.then((newData) => setRooms(newData))
+			.finally(() => setIsLoading(false))
+	}
+
 	return (
 		<div>
 			{userRole !== ROLE.ADMIN ? (
@@ -39,7 +48,8 @@ export const Admin = () => {
 									<p className={style.id_number}>{room.name}</p>
 									<img className={style.room_image} src={room.photos[0]} alt="" />
 									{!room.isAvailable && (
-										<button className={style.cancel_reservation}>Снять бронь</button>
+										<button className={style.cancel_reservation} onClick={() => onDeleteReservation(room._id)}>Снять
+											бронь</button>
 									)}
 								</div>
 							))}
