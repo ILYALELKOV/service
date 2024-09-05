@@ -96,3 +96,24 @@ ul {
 	border-radius: 5px;
 	box-shadow: 1px 5px 4px #050505;
 }
+
+.change_price_room {
+	background: #03001e; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	border: none;
+	color: white;
+	width: 250px;
+	height: 50px;
+	font-size: 20px;
+	box-shadow: 1px 3px 3px #393d39;
+}
+
+.change_price_room:hover {
+	outline: none;
+	box-shadow: 1px 4px 7px #dde319;
+	transition: 1.1s ease;
+}
+
+
+

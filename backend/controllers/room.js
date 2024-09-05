@@ -36,4 +36,8 @@ async function deleteReservationAdmin(roomId) {
 	}
 }
 
-module.exports = { getRooms, getRoom, bookRoom, getBookedRoom, deleteBooking, deleteReservationAdmin }
+async function changeRoomPrice(roomId, newPrice) {
+	await Room.findByIdAndUpdate(roomId, { price: newPrice }, { new: true })
+}
+
+module.exports = { getRooms, getRoom, bookRoom, getBookedRoom, deleteBooking, deleteReservationAdmin, changeRoomPrice }

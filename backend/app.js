@@ -1,19 +1,18 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
-const path = require('path')
 const chalk = require('chalk')
 const mapUser = require('./helpers/mapUser')
 const { register, login } = require('./controllers/user')
+const authenticated = require('./middlewares/authenticated')
 const {
 	getRooms,
 	getRoom,
 	bookRoom,
 	getBookedRoom,
 	deleteBooking,
-	deleteReservationAdmin
+	deleteReservationAdmin, changeRoomPrice
 } = require('./controllers/room')
-const { json } = require('express')
 
 const port = 3001
 const app = express()
@@ -58,6 +57,8 @@ app.get('/room/:id', async (req, res) => {
 	res.send(room)
 })
 
+app.use(authenticated)
+
 app.post('/room/:id/booked', async (req, res) => {
 	const { id, userId } = req.body
 	await bookRoom(id, userId)
@@ -80,6 +81,13 @@ app.post('/user/:userId/room/:roomId/delete-booking', async (req, res) => {
 app.post('/room/:roomId/delete-reservation-admin', async (req, res) => {
 	const { roomId } = req.params
 	await deleteReservationAdmin(roomId)
+	res.send({ success: true })
+})
+
+app.patch('/room/:roomId/update-price', async (req, res) => {
+	const { newPrice } = req.body
+	const { roomId } = req.params
+	await changeRoomPrice(roomId, newPrice)
 	res.send({ success: true })
 })
 

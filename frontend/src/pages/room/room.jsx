@@ -5,11 +5,13 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { selectUserRole, selectUserId } from '../../redux/selectors/index.js'
 import { ROLE } from '../../constans/index.js'
+import { Modal } from '../../components/modal/modal.jsx'
 import Loader from '../../components/loader/loader.jsx'
 import style from './room.module.css'
 
 export const Room = () => {
 	const [room, setRoom] = useState(null)
+	const [isModalOpen, setIsModalOpen] = useState(false)
 
 	const { id } = useParams()
 	const userRole = useSelector(selectUserRole)
@@ -24,6 +26,21 @@ export const Room = () => {
 	const onBookedRoom = () => {
 		request(`/room/${id}/booked`, 'POST', { id, userId })
 		navigate('/')
+	}
+
+	const handleChangePrice = () => {
+		setIsModalOpen(true)
+	}
+
+	const handleCloseModal = () => {
+		setIsModalOpen(false)
+	}
+
+	const handleSavePrice = (newPrice) => {
+		request(`/room/${id}/update-price`, 'PATCH', { newPrice })
+			.then(() => request(`/room/${id}`))
+			.then((res) => setRoom(res))
+			.then(() => setIsModalOpen(false))
 	}
 
 	return (
@@ -55,19 +72,29 @@ export const Room = () => {
 							<h3>Цена:</h3>
 							<p className={style.price}>{room.price}$</p>
 						</div>
-						{userRole === ROLE.GUEST
-							? (
-								<div className={style.error_message}>Войдите в свой аккаунт, что бы иметь возможность забронировать
-									номер</div>
-							)
-							: (
-								<button className={style.rent_button} onClick={onBookedRoom}>Забронировать</button>
-							)}
+						{userRole === ROLE.GUEST ? (
+							<div className={style.error_message}>
+								Войдите в свой аккаунт, чтобы иметь возможность забронировать номер
+							</div>
+						) : userRole === ROLE.ADMIN ? (
+							<button className={style.change_price_room} onClick={handleChangePrice}>
+								Изменить цену
+							</button>
+						) : (
+							<button className={style.rent_button} onClick={onBookedRoom}>
+								Забронировать
+							</button>
+						)}
 					</div>
 				</div>
 			) : (
 				<Loader />
 			)}
+
+			{isModalOpen && (
+				<Modal closeModal={handleCloseModal} savePrice={handleSavePrice} />
+			)}
+
 			<Link to="/">
 				<button className={style.main_page_button}>На главную</button>
 			</Link>
