@@ -42,7 +42,7 @@ export const Registration = () => {
 	}
 
 	const formError = errors?.login?.message || errors?.password?.message || errors?.checkPassword?.message
-//TODO необходимо проверить условия
+
 	if (roleId === ROLE.USER || roleId === ROLE.ADMIN) {
 		return <Navigate to="/" />
 	}

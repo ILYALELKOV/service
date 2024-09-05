@@ -21,7 +21,7 @@ export const Room = () => {
 			.then((res) => setRoom(res))
 	}, [])
 
-	const bookedRoom = () => {
+	const onBookedRoom = () => {
 		request(`/room/${id}/booked`, 'POST', { id, userId })
 		navigate('/')
 	}
@@ -61,7 +61,7 @@ export const Room = () => {
 									номер</div>
 							)
 							: (
-								<button className={style.rent_button} onClick={bookedRoom}>Забронировать</button>
+								<button className={style.rent_button} onClick={onBookedRoom}>Забронировать</button>
 							)}
 					</div>
 				</div>

@@ -1,32 +1,30 @@
-import { useSelector } from 'react-redux'
-import { selectUserRole } from '../../redux/selectors/index.js'
-import { ROLE } from '../../constans/index.js'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectRooms, selectUserRole } from '../../redux/selectors/index.js'
 import { NoAccessAdminPage } from '../../components/noAccessAdminPage/noAccessAdminPage.jsx'
 import { useEffect, useState } from 'react'
-import { request } from '../../utils/request.js'
+import { deleteReservationAdminAsync, loadRoomsAsync } from '../../redux/actions/index.js'
+import { ROLE } from '../../constans/index.js'
 import Loader from '../../components/loader/loader.jsx'
 import style from './admin.module.css'
 
 export const Admin = () => {
 
+	const dispatch = useDispatch()
+	const rooms = useSelector(selectRooms)
 	const userRole = useSelector(selectUserRole)
 
-	const [rooms, setRooms] = useState([])
 	const [isLoading, setIsLoading] = useState(true)
 
 	useEffect(() => {
-		request('/rooms')
-			.then((res) => setRooms(res))
-			.finally(() => setIsLoading(false))
+		dispatch(loadRoomsAsync())
+			.then(() => setIsLoading(false))
 	}, [])
 
 	const onDeleteReservation = (roomId) => {
 		setIsLoading(true)
 
-		request(`/room/${roomId}/delete-reservation-admin`, 'POST')
-			.then(() => request('/rooms'))
-			.then((newData) => setRooms(newData))
-			.finally(() => setIsLoading(false))
+		dispatch(deleteReservationAdminAsync(roomId))
+			.then(() => setIsLoading(false))
 	}
 
 	return (

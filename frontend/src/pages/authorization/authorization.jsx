@@ -38,7 +38,7 @@ export const Authorization = () => {
 				sessionStorage.setItem('userData', JSON.stringify(user))
 			})
 	}
-//TODO продумать навигацию, при каких именно условиях
+
 	if (userName !== null) {
 		return <Navigate to="/" />
 	}

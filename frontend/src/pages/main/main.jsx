@@ -1,45 +1,46 @@
 import { useEffect, useState } from 'react'
-import { request } from '../../utils/request.js'
 import { RoomCard } from '../../components/roomCart/roomCard.jsx'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectRooms } from '../../redux/selectors/index.js'
+import { loadRoomsAsync } from '../../redux/actions/index.js'
 import Loader from '../../components/loader/loader.jsx'
 import styles from './main.module.css'
 
 export const Main = () => {
-	const [rooms, setRooms] = useState([])
 	const [isLoading, setIsLoading] = useState(true)
 
-	useEffect(() => {
-		request('/rooms')
-			.then((res) => {
-				setRooms(res)
-			})
-			.finally(() => setIsLoading(false))
-	}, [])
+	const dispatch = useDispatch()
+	const rooms = useSelector(selectRooms)
 
-	//TODO необходимо создать компонент, который скажет что доступных номеров нет
+	useEffect(() => {
+		dispatch(loadRoomsAsync())
+			.then(() => setIsLoading(false))
+	}, [dispatch])
 
 	return (
 		<>
 			<h1>Доступные номера</h1>
 			{isLoading ? (
 				<Loader />
-			) : rooms.length > 0 ? (
+			) : rooms.some(room => room.isAvailable) ? (
 				<div className={styles.rooms_container}>
 					{rooms.map((room) => (
-						<RoomCard
-							key={room._id}
-							url={room.photos[0]}
-							price={room.price}
-							amenities={room.amenities}
-							size={room.size}
-							name={room.name}
-							id={room._id}
-							isAvailable={room.isAvailable}
-						/>
+						room.isAvailable && (
+							<RoomCard
+								key={room._id}
+								url={room.photos[0]}
+								price={room.price}
+								amenities={room.amenities}
+								size={room.size}
+								name={room.name}
+								id={room._id}
+								isAvailable={room.isAvailable}
+							/>
+						)
 					))}
 				</div>
 			) : (
-				<p>Нет доступных номеров</p>
+				<p className={styles.no_rooms}>К сожалению доступных номеров нет</p>
 			)}
 		</>
 	)

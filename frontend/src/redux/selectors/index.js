@@ -1,3 +1,4 @@
 export * from './select-user-login.js'
 export * from './select-user-role.js'
 export * from './select-user-id.js'
+export * from './select-rooms.js'

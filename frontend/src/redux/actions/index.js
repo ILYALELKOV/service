@@ -1,3 +1,6 @@
 export * from './logout.js'
 export * from './set-user.js'
 export * from './action-type.js'
+export * from './load-rooms-async.js'
+export * from './set-rooms-data.js'
+export * from './delete-reservation-admin-async.js'

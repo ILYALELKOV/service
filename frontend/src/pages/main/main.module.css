@@ -12,6 +12,10 @@
 	gap: 10px;
 }
 
-h1 {
-	margin: 20px 0;
+.no_rooms {
+	color: #d61111;
+	margin: 250px 0;
+	font-size: 28px;
+	font-weight: bold;
+	text-shadow: -1px 2px 2px #939393;
 }
