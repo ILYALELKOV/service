@@ -35,5 +35,14 @@ async function login(login, password) {
 	return { user, token }
 }
 
+async function getUsers() {
+	const usersData = await User.find()
+	return usersData
+}
 
-module.exports = { register, login }
+async function deleteUser(userId) {
+	await User.deleteOne({ _id: userId })
+}
+
+
+module.exports = { register, login, getUsers, deleteUser }

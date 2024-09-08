@@ -32,8 +32,17 @@ export default defineConfig({
 				target: 'http://localhost:3001',
 				changeOrigin: true,
 				rewrite: (path) => path.replace(/^\/user/, '/user')
+			},
+			'/get-users-list': {
+				target: 'http://localhost:3001',
+				changeOrigin: true
+			},
+			'/delete-user': {
+				target: 'http://localhost:3001',
+				changeOrigin: true
 			}
 		},
+		historyApiFallback: true,
 		setup: (app) => {
 			app.use(
 				history({

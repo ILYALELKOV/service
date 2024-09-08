@@ -2,7 +2,6 @@ import { Route, Routes } from 'react-router-dom'
 import { ErrorPage } from './pages/error-page/errorPage.jsx'
 import { Main } from './pages/main/main.jsx'
 import { Header } from './components/header/header.jsx'
-import { ERROR } from './constans'
 import { Registration } from './pages/registretion/registration.jsx'
 import { Authorization } from './pages/authorization/authorization.jsx'
 import { Footer } from './components/footer/footer.jsx'
@@ -14,6 +13,7 @@ import { Room } from './pages/room/room.jsx'
 import { CookieModal } from './components/cookieModal/cookieModal.jsx'
 import { UserAccount } from './pages/userAccount/userAccount.jsx'
 import './App.css'
+import { UsersList } from './pages/usersList/usersList.jsx'
 
 function Service() {
 
@@ -45,7 +45,8 @@ function Service() {
 					<Route path="/admin" element={<Admin />} />
 					<Route path="/room/:id" element={<Room />} />
 					<Route path="/account" element={<UserAccount />} />
-					<Route path="*" element={<ErrorPage error={ERROR.PAGE_NOT_EXIST} />} />
+					<Route path="/users-list" element={<UsersList />} />
+					<Route path="*" element={<ErrorPage />} />
 				</Routes>
 			</div>
 			<CookieModal />

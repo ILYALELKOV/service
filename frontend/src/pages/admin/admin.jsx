@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { selectRooms, selectUserRole } from '../../redux/selectors/index.js'
-import { NoAccessAdminPage } from '../../components/noAccessAdminPage/noAccessAdminPage.jsx'
+import { NoAccessAdmin } from '../../components/noAccessAdminPage/noAccessAdmin.jsx'
 import { useEffect, useState } from 'react'
 import { deleteReservationAdminAsync, loadRoomsAsync } from '../../redux/actions/index.js'
 import { ROLE } from '../../constans/index.js'
+import { Link } from 'react-router-dom'
 import Loader from '../../components/loader/loader.jsx'
 import style from './admin.module.css'
 
@@ -30,10 +31,15 @@ export const Admin = () => {
 	return (
 		<div>
 			{userRole !== ROLE.ADMIN ? (
-				<NoAccessAdminPage />
+				<NoAccessAdmin />
 			) : (
 				<div className={style.container}>
-					<h1>Статус номеров</h1>
+					<div className={style.header_container}>
+						<h1 className={style.header}>Статус номеров</h1>
+						<Link to="/users-list">
+							<button className={style.user_list_button}>Список пользователей</button>
+						</Link>
+					</div>
 					{isLoading ? (
 						<Loader />
 					) : (

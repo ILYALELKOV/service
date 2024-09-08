@@ -1,0 +1,51 @@
+.users_table {
+	width: 1000px;
+	margin: 150px auto;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 20px;
+	box-shadow: 1px 3px 3px #393d39;
+	background: #abbaab; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #ffffff, #abbaab); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.table_head {
+	background: #0099F7; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #F11712, #0099F7); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #F11712, #0099F7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: white;
+}
+
+.table_road {
+	background: #EFEFBB; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #D4D3DD, #EFEFBB); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #D4D3DD, #EFEFBB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	font-weight: 700;
+}
+
+.delete_user_button {
+	background: #8E0E00; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: white;
+	border: none;
+	padding: 5px 20px;
+	width: 210px;
+	height: 40px;
+	font-size: 16px;
+}
+
+.delete_user_button:hover {
+	box-shadow: 2px 4px 5px #a20c0c;
+	color: #dde319;
+	transition: 0.9s ease;
+}
+
+.message {
+	color: #64d22a;
+	font-size: 30px;
+	font-weight: 900;
+	margin-top: 50px;
+}

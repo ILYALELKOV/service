@@ -3,7 +3,8 @@ const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
 const chalk = require('chalk')
 const mapUser = require('./helpers/mapUser')
-const { register, login } = require('./controllers/user')
+const mapUserData = require('./helpers/mapUserData')
+const { register, login, getUsers, deleteUser } = require('./controllers/user')
 const authenticated = require('./middlewares/authenticated')
 const {
 	getRooms,
@@ -13,6 +14,7 @@ const {
 	deleteBooking,
 	deleteReservationAdmin, changeRoomPrice
 } = require('./controllers/room')
+const path = require('path')
 
 const port = 3001
 const app = express()
@@ -57,7 +59,6 @@ app.get('/room/:id', async (req, res) => {
 	res.send(room)
 })
 
-app.use(authenticated)
 
 app.post('/room/:id/booked', async (req, res) => {
 	const { id, userId } = req.body
@@ -71,6 +72,7 @@ app.get('/user/:userId/booked-rooms', async (req, res) => {
 
 	res.send(userBookedRooms)
 })
+
 
 app.post('/user/:userId/room/:roomId/delete-booking', async (req, res) => {
 	const { userId, roomId } = req.params
@@ -89,6 +91,24 @@ app.patch('/room/:roomId/update-price', async (req, res) => {
 	const { roomId } = req.params
 	await changeRoomPrice(roomId, newPrice)
 	res.send({ success: true })
+})
+
+app.get('/get-users-list', async (req, res) => {
+	const users = await getUsers()
+	res.send(mapUserData(users))
+})
+
+app.post('/delete-user/:userId', async (req, res) => {
+	const { userId } = req.params
+	await deleteUser(userId)
+	const users = await getUsers()
+	res.send(mapUserData(users))
+})
+
+app.use(authenticated)
+
+app.get('*', (req, res) => {
+	res.sendFile(path.resolve(__dirname, '../frontend/', 'index.html'))
 })
 
 mongoose.connect('mongodb+srv://Ilya:Ilyaasasin99@cluster0.buslwrr.mongodb.net/metroluxe?retryWrites=true&w=majority&appName=Cluster0')
