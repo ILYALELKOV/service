@@ -1,4 +1,4 @@
-.registration_container {
+.registration_container_light {
 	width: 500px;
 	height: 700px;
 	padding: 30px;
@@ -13,7 +13,27 @@
 	box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
 }
 
-.registration_container > h2 {
+.registration_container_dark {
+	width: 500px;
+	height: 700px;
+	padding: 30px;
+	border-radius: 10px;
+	margin: 100px auto;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	background: #1A2980; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #26D0CE, #1a31bb); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #26D0CE, #1b35c6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
+}
+
+.registration_container_light > h2 {
+	font-size: 38px;
+	font-weight: 500;
+}
+
+.registration_container_dark > h2 {
 	font-size: 38px;
 	font-weight: 500;
 }

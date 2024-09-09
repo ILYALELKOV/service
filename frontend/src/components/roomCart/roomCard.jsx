@@ -1,9 +1,12 @@
 import { useNavigate } from 'react-router'
+import { useSelector } from 'react-redux'
+import { selectTheme } from '../../redux/selectors/index.js'
 import style from './roomCard.module.css'
 
 export const RoomCard = ({ url, price, size, name, id, isAvailable }) => {
 
 	const navigate = useNavigate()
+	const theme = useSelector(selectTheme)
 
 	const handleClick = (id) => {
 		navigate(`/room/${id}`)
@@ -12,14 +15,14 @@ export const RoomCard = ({ url, price, size, name, id, isAvailable }) => {
 	return (
 		<>
 			{isAvailable && (
-				<div className={style.card} onClick={() => handleClick(id)}>
+				<div className={theme === 'light' ? style.card_light : style.card_dark} onClick={() => handleClick(id)}>
 					<div>
 						<img className={style.card_img} src={url} alt="room" />
 					</div>
-					<div className={style.card_description}>
+					<div className={theme === 'light' ? style.card_description_light : style.card_description_dark}>
 						<p>{name}</p>
 						<p>Площадь: {size}</p>
-						<p className={style.room_price}>Цена: {price}$</p>
+						<p className={theme === 'light' ? style.room_price_light : style.room_price_dark}>Цена: {price}$</p>
 					</div>
 				</div>
 			)}

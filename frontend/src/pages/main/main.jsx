@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { RoomCard } from '../../components/roomCart/roomCard.jsx'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectRooms } from '../../redux/selectors/index.js'
+import { selectRooms, selectTheme } from '../../redux/selectors/index.js'
 import { loadRoomsAsync } from '../../redux/actions/index.js'
 import Loader from '../../components/loader/loader.jsx'
 import styles from './main.module.css'
@@ -11,6 +11,7 @@ export const Main = () => {
 
 	const dispatch = useDispatch()
 	const rooms = useSelector(selectRooms)
+	const theme = useSelector(selectTheme)
 
 	useEffect(() => {
 		dispatch(loadRoomsAsync())
@@ -23,7 +24,7 @@ export const Main = () => {
 			{isLoading ? (
 				<Loader />
 			) : rooms.some(room => room.isAvailable) ? (
-				<div className={styles.rooms_container}>
+				<div className={theme === 'light' ? styles.rooms_container_light : styles.rooms_container_dark}>
 					{rooms.map((room) => (
 						room.isAvailable && (
 							<RoomCard

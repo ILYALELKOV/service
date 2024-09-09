@@ -1,5 +1,5 @@
 import { ROLE } from '../../constans/index.js'
-import { selectUserId, selectUserRole } from '../../redux/selectors/index.js'
+import { selectTheme, selectUserId, selectUserRole } from '../../redux/selectors/index.js'
 import { useSelector } from 'react-redux'
 import { NoAccessUserAccount } from '../../components/noAccessUserAccount/noAccessUserAccount.jsx'
 import { useEffect, useState } from 'react'
@@ -14,6 +14,7 @@ export const UserAccount = () => {
 
 	const userRole = useSelector(selectUserRole)
 	const userId = useSelector(selectUserId)
+	const theme = useSelector(selectTheme)
 
 	useEffect(() => {
 		if (userId) {
@@ -40,7 +41,7 @@ export const UserAccount = () => {
 			{userRole !== ROLE.USER ? (
 				<NoAccessUserAccount />
 			) : (
-				<div className={style.container}>
+				<div className={theme === 'light' ? style.container_light : style.container_dark}>
 					<h1>Мои забронированные номера</h1>
 					{isLoading ? (
 						<Loader />

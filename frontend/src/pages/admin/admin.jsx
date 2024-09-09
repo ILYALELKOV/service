@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { selectRooms, selectUserRole } from '../../redux/selectors/index.js'
+import { selectRooms, selectTheme, selectUserRole } from '../../redux/selectors/index.js'
 import { NoAccessAdmin } from '../../components/noAccessAdminPage/noAccessAdmin.jsx'
 import { useEffect, useState } from 'react'
 import { deleteReservationAdminAsync, loadRoomsAsync } from '../../redux/actions/index.js'
@@ -13,6 +13,7 @@ export const Admin = () => {
 	const dispatch = useDispatch()
 	const rooms = useSelector(selectRooms)
 	const userRole = useSelector(selectUserRole)
+	const theme = useSelector(selectTheme)
 
 	const [isLoading, setIsLoading] = useState(true)
 
@@ -33,7 +34,7 @@ export const Admin = () => {
 			{userRole !== ROLE.ADMIN ? (
 				<NoAccessAdmin />
 			) : (
-				<div className={style.container}>
+				<div className={theme === 'light' ? style.container_light : style.container_dark}>
 					<div className={style.header_container}>
 						<h1 className={style.header}>Статус номеров</h1>
 						<Link to="/users-list">

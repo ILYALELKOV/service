@@ -8,7 +8,7 @@ import { ErrorContainer } from '../../components/errorConrainer/errorContainer.j
 import { request } from '../../utils/request.js'
 import { useDispatch, useSelector } from 'react-redux'
 import { setUser } from '../../redux/actions/index.js'
-import { selectUserRole } from '../../redux/selectors/index.js'
+import { selectTheme, selectUserRole } from '../../redux/selectors/index.js'
 import { ServerError } from '../../components/serverError/serverError.jsx'
 import { ROLE } from '../../constans/index.js'
 import style from './registration.module.css'
@@ -19,6 +19,7 @@ export const Registration = () => {
 
 	const dispatch = useDispatch()
 	const roleId = useSelector(selectUserRole)
+	const theme = useSelector(selectTheme)
 
 	const { register, handleSubmit, formState: { errors } } = useForm({
 		defaultValues: {
@@ -49,7 +50,7 @@ export const Registration = () => {
 
 	return (
 		<>
-			<div className={style.registration_container}>
+			<div className={theme === 'light' ? style.registration_container_light : style.registration_container_dark}>
 				<h2>Регистрация</h2>
 				<form className={style.registration_form} onSubmit={handleSubmit(onSubmitRegistration)}>
 					<div className={style.input_container}>

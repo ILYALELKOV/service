@@ -1,4 +1,4 @@
-.card {
+.card_light {
 	width: 420px;
 	height: 200px;
 	display: flex;
@@ -7,9 +7,24 @@
 	border-radius: 5px;
 }
 
-.card:hover {
+.card_dark {
+	width: 420px;
+	height: 200px;
+	display: flex;
+	justify-content: space-around;
+	box-shadow: 0 5px 5px #959595;
+	border-radius: 5px;
+}
+
+.card_light:hover {
 	cursor: pointer;
 	box-shadow: 0 5px 5px #2ff987;
+	transition: 0.9s ease;
+}
+
+.card_dark:hover {
+	cursor: pointer;
+	box-shadow: 0 5px 5px #1fa75b;
 	transition: 0.9s ease;
 }
 
@@ -19,25 +34,55 @@
 	border-radius: 5px 5px 0 5px;
 }
 
-.card_description {
+.card_description_light {
 	color: #090303;
+	border-radius: 0 5px 5px 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
 
-.card_description > p:nth-child(1) {
+.card_description_dark {
+	color: #090303;
+	background: #c8cbd2;
+	border-radius: 0 5px 5px 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.card_description_light > p:nth-child(1) {
 	color: #3b56e2;
 	font-weight: bold;
 	line-height: 1.1;
 	text-shadow: -1px 2px 2px #939393;
 }
 
-.room_price {
+.card_description_dark > p:nth-child(1) {
+	color: #3b56e2;
+	font-weight: bold;
+	line-height: 1.1;
+	text-shadow: -1px 2px 2px #939393;
+}
+
+.room_price_light {
 	font-weight: bold;
 	background: #36D1DC; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	height: 35px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	border-radius: 0 0 5px 0;
+}
+
+.room_price_dark {
+	font-weight: bold;
+	background: #1A2980; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #26D0CE, #1a31bb); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #26D0CE, #1b35c6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	height: 35px;
 	display: flex;
 	align-items: center;

@@ -1,4 +1,4 @@
-.footer_container {
+.footer_container_light {
 	width: 1280px;
 	height: 100px;
 	padding: 10px 20px;
@@ -14,7 +14,23 @@
 	background: linear-gradient(to right, #e0f3f6, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.footer_content {
+.footer_container_dark {
+	width: 1280px;
+	height: 100px;
+	padding: 10px 20px;
+	margin: 20px 0;
+	border-radius: 5px;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
+	background: #1A2980; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #26D0CE, #1a31bb); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #26D0CE, #1b35c6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.footer_content_light {
 	height: 80px;
 	width: 300px;
 	line-height: 1px;
@@ -24,30 +40,67 @@
 	align-items: center;
 }
 
-.footer_content h4 {
+.footer_content_dark {
+	height: 80px;
+	width: 300px;
+	line-height: 1px;
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.footer_content_light h4 {
 	margin: 10px 10px;
 }
 
-.footer_content p {
+.footer_content_dark h4 {
+	margin: 10px 10px;
+	color: #e8eef7;
+}
+
+.footer_content_light p {
 	margin: 15px
 }
 
-.footer_section {
+.footer_content_dark p {
+	margin: 15px;
+	color: #e8eef7;
+}
+
+.footer_section_light {
 	height: 80px;
 	width: 400px;
 	padding: 5px;
 }
 
-.footer_section p {
+.footer_section_dark {
+	height: 80px;
+	width: 400px;
+	padding: 5px;
+}
+
+.footer_section_light p {
 	line-height: 25px;
 	margin: 5px
 }
 
-.footer_section h4 {
+.footer_section_dark p {
+	line-height: 25px;
+	margin: 5px;
+	color: #e8eef7;
+}
+
+.footer_section_light h4 {
 	margin: 5px 10px;
 }
 
-.weather_container {
+.footer_section_dark h4 {
+	margin: 5px 10px;
+	color: #e8eef7;
+}
+
+.weather_container_light {
 	width: 400px;
 	height: 80px;
 	margin-top: 15px;
@@ -60,9 +113,27 @@
 	text-shadow: -1px 3px 2px #393d39;
 }
 
-.weather_container p {
+.weather_container_dark {
+	width: 400px;
+	height: 80px;
+	margin-top: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	font-weight: 700;
+	text-shadow: -1px 3px 2px #393d39;
+}
+
+.weather_container_light p {
 	margin: 10px;
 	font-size: 17px;
+}
+
+.weather_container_dark p {
+	margin: 10px;
+	font-size: 17px;
+	color: #e8eef7;
 }
 
 .error_message {

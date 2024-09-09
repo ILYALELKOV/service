@@ -1,38 +1,36 @@
 import { Link } from 'react-router-dom'
-import { Input } from '../input/input.jsx'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectUserLogin, selectUserRole } from '../../redux/selectors/index.js'
-import { logout } from '../../redux/actions/index.js'
+import { selectTheme, selectUserLogin, selectUserRole } from '../../redux/selectors/index.js'
+import { changeTheme, logout } from '../../redux/actions/index.js'
 import { ROLE } from '../../constans/index.js'
-import mainInputStyle from './styles/input/main_input.module.css'
+import { Time } from '../time/time.jsx'
 import style from './header.module.css'
 
 export const Header = () => {
-
 	const userName = useSelector(selectUserLogin)
 	const userRole = useSelector(selectUserRole)
 	const dispatch = useDispatch()
+	const theme = useSelector(selectTheme)
 
 	const onLogOut = () => {
 		dispatch(logout())
 	}
 
+	const onChangeTheme = () => {
+		dispatch(changeTheme())
+		const newTheme = theme === 'light' ? 'dark' : 'light'
+		localStorage.setItem('theme', newTheme)
+	}
+
 	return (
-		<div className={style.container}>
-			<Link to="/">
-				<button className={style.logo_image}></button>
-			</Link>
+		<div className={theme === 'light' ? style.container_light : style.container_dark}>
+			<button className={style.button_theme} onClick={onChangeTheme}>
+				<img src="../../../public/theme.png" alt="theme_icon" />
+			</button>
 
-			<form action="#" className={style.input_container}>
-				<Input
-					styleClass={mainInputStyle}
-					placeholder="Поиск..."
-					type="text"
-				/>
-				<button className={style.btn_search}></button>
-			</form>
+			<Time />
 
-			<div className={style.date_container}>
+			<div className={theme === 'light' ? style.date_container_light : style.date_container_dark}>
 				<div className={style.calendar}></div>
 				<p>{new Date().toLocaleString('ru', {
 					year: 'numeric',
@@ -43,6 +41,10 @@ export const Header = () => {
 					weekday: 'long'
 				})}</p>
 			</div>
+
+			<Link to="/">
+				<button className={style.logo_image}></button>
+			</Link>
 
 
 			<div className={style.user_container}>
@@ -68,8 +70,8 @@ export const Header = () => {
 				: (
 					<div className={style.login_container} onClick={onLogOut}>
 						<div className={style.log_in_out}></div>
-						<h4 className={style.logOut_link}>Выйти</h4>
-						<h4 className={style.logOut_link}> из аккаунта</h4>
+						<h4 className={theme === 'light' ? style.logOut_link_light : style.logOut_link_dark}>Выйти</h4>
+						<h4 className={theme === 'light' ? style.logOut_link_light : style.logOut_link_dark}> из аккаунта</h4>
 					</div>
 				)}
 			{userRole === ROLE.ADMIN

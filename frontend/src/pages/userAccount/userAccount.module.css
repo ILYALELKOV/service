@@ -1,7 +1,22 @@
-.container {
+.container_light {
 	background: #C9D6FF; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	width: 1280px;
+	height: 900px;
+	padding: 10px 20px;
+	border-radius: 5px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.container_dark {
+	background: #C9D6FF; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #E2E2E2, #9fa7c0); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #E2E2E2, #9ba3bd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	width: 1280px;
 	height: 900px;
 	padding: 10px 20px;

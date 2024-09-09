@@ -1,4 +1,4 @@
-.container {
+.container_light {
 	background: #1c92d2; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #98eaeb, #1c92d2); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #e0f3f6, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -13,8 +13,29 @@
 	align-items: center;
 }
 
+.container_dark {
+	background: #1A2980; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #26D0CE, #1a31bb); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #26D0CE, #1b35c6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+	margin-bottom: 20px;
+	width: 1280px;
+	height: 100px;
+	padding: 10px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
 p {
 	margin: 0;
+}
+
+.button_theme {
+	background: transparent;
+	border: none;
+	padding: 0;
 }
 
 .logo_image {
@@ -49,24 +70,24 @@ p {
 	background-color: #dde319;
 }
 
-.input_container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
+/*.input_container {*/
+/*	display: flex;*/
+/*	align-items: center;*/
+/*	justify-content: center;*/
+/*}*/
 
-.btn_search:hover {
-	transform: scale(102%);
-	background-color: #2ff987;
-	transition: 0.9s ease-in-out;
-}
+/*.btn_search:hover {*/
+/*	transform: scale(102%);*/
+/*	background-color: #2ff987;*/
+/*	transition: 0.9s ease-in-out;*/
+/*}*/
 
-.btn_search:focus {
-	transform: scale(102%);
-	background-color: #2ff987;
-	transition: 0.9s ease-in-out;
-	outline: none;
-}
+/*.btn_search:focus {*/
+/*	transform: scale(102%);*/
+/*	background-color: #2ff987;*/
+/*	transition: 0.9s ease-in-out;*/
+/*	outline: none;*/
+/*}*/
 
 .calendar {
 	background-image: url("../../../public/calendar.png");
@@ -77,7 +98,7 @@ p {
 	background-size: 80%;
 }
 
-.date_container {
+.date_container_light {
 	font-size: 16px;
 	font-weight: bold;
 	line-height: 10px;
@@ -87,7 +108,22 @@ p {
 	align-items: center;
 }
 
-.date_container p {
+.date_container_dark {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #e8eef7;
+}
+
+.date_container_light p {
+	margin: 7px;
+}
+
+.date_container_dark p {
 	margin: 7px;
 }
 
@@ -153,8 +189,13 @@ p {
 	font-weight: bold;
 }
 
-.logOut_link {
+.logOut_link_light {
 	color: #020101;
+	margin: 0;
+}
+
+.logOut_link_dark {
+	color: #e8eef7;
 	margin: 0;
 }
 

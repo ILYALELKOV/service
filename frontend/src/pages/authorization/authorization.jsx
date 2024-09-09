@@ -7,7 +7,7 @@ import { authFormSchema } from './authorizationSchema/authorizationSchema.js'
 import { ErrorContainer } from '../../components/errorConrainer/errorContainer.jsx'
 import { request } from '../../utils/request.js'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectUserLogin } from '../../redux/selectors/index.js'
+import { selectTheme, selectUserLogin } from '../../redux/selectors/index.js'
 import { setUser } from '../../redux/actions/index.js'
 import { ServerError } from '../../components/serverError/serverError.jsx'
 import style from './authorization.module.css'
@@ -18,6 +18,7 @@ export const Authorization = () => {
 
 	const dispatch = useDispatch()
 	const userName = useSelector(selectUserLogin)
+	const theme = useSelector(selectTheme)
 
 	const { register, handleSubmit, formState: { errors } } = useForm({
 		defaultValues: {
@@ -47,7 +48,7 @@ export const Authorization = () => {
 
 	return (
 		<>
-			<div className={style.authorization_container}>
+			<div className={theme === 'light' ? style.authorization_container_light : style.authorization_container_dark}>
 				<h2>Вход</h2>
 				<form className={style.authorization_form} onSubmit={handleSubmit(onSubmitLogin)}>
 					<div className={style.input_container}>

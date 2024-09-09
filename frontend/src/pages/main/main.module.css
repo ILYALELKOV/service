@@ -1,9 +1,23 @@
-.rooms_container {
+.rooms_container_light {
 	width: 1280px;
 	height: 90%;
 	background: #E0EAFC; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	padding: 10px 20px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+}
+
+.rooms_container_dark {
+	width: 1280px;
+	height: 90%;
+	background: #E0EAFC; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #CFDEF3, #a4aab4); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #CFDEF3, #a1a7b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	padding: 10px 20px;
 	border-radius: 5px;
 	margin-bottom: 20px;
