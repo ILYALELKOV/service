@@ -99,11 +99,20 @@
 	background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.error_container {
+.error_container_light {
 	height: 120px;
 	max-width: 400px;
 	margin: 0;
 	color: #b01414;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.error_container_dark {
+	height: 120px;
+	max-width: 400px;
+	margin: 0;
+	color: #cf1313;
 	font-size: 16px;
 	font-weight: bold;
 }

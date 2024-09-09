@@ -2,7 +2,7 @@ import style from './loader.module.css'
 
 const Loader = () => {
 	return (
-		<div className={style.wrapper}>
+		<section className={style.wrapper}>
 			<div className={style.grid_loader}>
 				<div></div>
 				<div></div>
@@ -32,7 +32,7 @@ const Loader = () => {
 				<div></div>
 			</div>
 			<h1>Загрузка...</h1>
-		</div>
+		</section>
 	)
 }
 

@@ -50,10 +50,10 @@ export const Registration = () => {
 
 	return (
 		<>
-			<div className={theme === 'light' ? style.registration_container_light : style.registration_container_dark}>
+			<section className={theme === 'light' ? style.registration_container_light : style.registration_container_dark}>
 				<h2>Регистрация</h2>
 				<form className={style.registration_form} onSubmit={handleSubmit(onSubmitRegistration)}>
-					<div className={style.input_container}>
+					<section className={style.input_container}>
 						<Input {...register('login')} text="Введите логин..." type="text" styleClass={styleInput}
 									 autoComplete="username" />
 						<Input {...register('password')} text="Введите пароль..." type="password" styleClass={styleInput}
@@ -62,7 +62,7 @@ export const Registration = () => {
 									 autoComplete="new-password" />
 						< ErrorContainer errors={errors} />
 						{serverError && <ServerError errorMessage={serverError} />}
-					</div>
+					</section>
 
 					<div className={style.button_container}>
 						<button disabled={!!formError} type="submit">Зарегистрироваться</button>
@@ -71,7 +71,7 @@ export const Registration = () => {
 						</Link>
 					</div>
 				</form>
-			</div>
+			</section>
 		</>
 	)
 }

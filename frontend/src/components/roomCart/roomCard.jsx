@@ -15,7 +15,7 @@ export const RoomCard = ({ url, price, size, name, id, isAvailable }) => {
 	return (
 		<>
 			{isAvailable && (
-				<div className={theme === 'light' ? style.card_light : style.card_dark} onClick={() => handleClick(id)}>
+				<section className={theme === 'light' ? style.card_light : style.card_dark} onClick={() => handleClick(id)}>
 					<div>
 						<img className={style.card_img} src={url} alt="room" />
 					</div>
@@ -24,7 +24,7 @@ export const RoomCard = ({ url, price, size, name, id, isAvailable }) => {
 						<p>Площадь: {size}</p>
 						<p className={theme === 'light' ? style.room_price_light : style.room_price_dark}>Цена: {price}$</p>
 					</div>
-				</div>
+				</section>
 			)}
 		</>
 	)

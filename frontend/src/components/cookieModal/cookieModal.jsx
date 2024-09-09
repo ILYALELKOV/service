@@ -20,7 +20,7 @@ export const CookieModal = () => {
 	if (!isOpen) return null
 
 	return (
-		<div className={style.modal}>
+		<section className={style.modal}>
 			<div className={style.modalContent}>
 				<h2 className={style.modalHeader}>Мы используем cookies</h2>
 				<p className={style.modalText}>Мы используем cookies для улучшения работы сайта. Продолжая пользоваться сайтом,
@@ -29,6 +29,6 @@ export const CookieModal = () => {
 				<button className={style.modalButtonAgreement} onClick={handleAccept}>Принять</button>
 				<button className={style.modalButtonRefusal} onClick={handleAccept}>Отказаться</button>
 			</div>
-		</div>
+		</section>
 	)
 }

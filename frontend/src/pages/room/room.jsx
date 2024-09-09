@@ -46,12 +46,12 @@ export const Room = () => {
 	return (
 		<>
 			{room ? (
-				<div className={style.container}>
+				<main className={style.container}>
 					<div className={style.room_container}>
 						<h1>{room.name}</h1>
 						<img className={style.room_image} src={room.photos[0]} alt="комната" />
 					</div>
-					<div className={style.description_container}>
+					<section className={style.description_container}>
 						<div>
 							<h3>Описание:</h3>
 							<p>{room.description}</p>
@@ -85,8 +85,8 @@ export const Room = () => {
 								Забронировать
 							</button>
 						)}
-					</div>
-				</div>
+					</section>
+				</main>
 			) : (
 				<Loader />
 			)}

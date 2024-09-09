@@ -41,14 +41,14 @@ export const UserAccount = () => {
 			{userRole !== ROLE.USER ? (
 				<NoAccessUserAccount />
 			) : (
-				<div className={theme === 'light' ? style.container_light : style.container_dark}>
+				<main className={theme === 'light' ? style.container_light : style.container_dark}>
 					<h1>Мои забронированные номера</h1>
 					{isLoading ? (
 						<Loader />
 					) : (
 						<>
 							{userData && userData.bookedRooms && userData.bookedRooms.length > 0 ? (
-								<div className={style.booked_rooms_container}>
+								<section className={style.booked_rooms_container}>
 									{userData.bookedRooms.map((room) => (
 										<UserBookedRoomsCard
 											key={room._id}
@@ -60,7 +60,7 @@ export const UserAccount = () => {
 											onDeleteBooking={deleteBooking}
 										/>
 									))}
-								</div>
+								</section>
 							) : userData && userData.bookedRooms && userData.bookedRooms.length === 0 ? (
 								<div className={style.text_booked_room}>
 									<p>У вас нет забронированных номеров</p>
@@ -68,7 +68,7 @@ export const UserAccount = () => {
 							) : null}
 						</>
 					)}
-				</div>
+				</main>
 			)}
 		</>
 	)

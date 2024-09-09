@@ -48,16 +48,16 @@ export const Authorization = () => {
 
 	return (
 		<>
-			<div className={theme === 'light' ? style.authorization_container_light : style.authorization_container_dark}>
+			<section className={theme === 'light' ? style.authorization_container_light : style.authorization_container_dark}>
 				<h2>Вход</h2>
 				<form className={style.authorization_form} onSubmit={handleSubmit(onSubmitLogin)}>
-					<div className={style.input_container}>
+					<section className={style.input_container}>
 						<Input {...register('login')} text="Введите логин..." type="text" styleClass={styleInput}
 									 autoComplete="username" />
 						<Input {...register('password')} text="Введите пароль..." type="password" styleClass={styleInput}
 									 autoComplete="new-password" />
 						<ErrorContainer errors={errors} />
-					</div>
+					</section>
 					{serverError && <ServerError errorMessage={serverError} />}
 					<div className={style.button_container}>
 						<button disabled={!!formError} type="submit">Войти</button>
@@ -69,7 +69,7 @@ export const Authorization = () => {
 						</Link>
 					</div>
 				</form>
-			</div>
+			</section>
 		</>
 	)
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { request } from '../../utils/request.js'
 import { useSelector } from 'react-redux'
 import { selectUserRole } from '../../redux/selectors/index.js'

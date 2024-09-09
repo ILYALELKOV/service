@@ -3,7 +3,7 @@ import style from './userBookedRoomsCard.module.css'
 export const UserBookedRoomsCard = ({ img, name, size, amenities, onDeleteBooking, id }) => {
 
 	return (
-		<div className={style.room_container}>
+		<section className={style.room_container}>
 			<div>
 				<img src={img} alt="комната" className={style.room_image} />
 			</div>
@@ -17,6 +17,6 @@ export const UserBookedRoomsCard = ({ img, name, size, amenities, onDeleteBookin
 				<h3>{size}</h3>
 				<button onClick={() => onDeleteBooking(id)} className={style.room_description_button}>Отменить бронь</button>
 			</div>
-		</div>
+		</section>
 	)
 }

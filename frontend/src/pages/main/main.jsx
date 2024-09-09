@@ -24,7 +24,7 @@ export const Main = () => {
 			{isLoading ? (
 				<Loader />
 			) : rooms.some(room => room.isAvailable) ? (
-				<div className={theme === 'light' ? styles.rooms_container_light : styles.rooms_container_dark}>
+				<main className={theme === 'light' ? styles.rooms_container_light : styles.rooms_container_dark}>
 					{rooms.map((room) => (
 						room.isAvailable && (
 							<RoomCard
@@ -39,7 +39,7 @@ export const Main = () => {
 							/>
 						)
 					))}
-				</div>
+				</main>
 			) : (
 				<p className={styles.no_rooms}>К сожалению доступных номеров нет</p>
 			)}

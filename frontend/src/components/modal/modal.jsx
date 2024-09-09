@@ -9,7 +9,7 @@ export const Modal = ({ closeModal, savePrice }) => {
 	}
 
 	return (
-		<div className={style.modal}>
+		<section className={style.modal}>
 			<div className={style.modal_content}>
 				<h2>Изменить цену</h2>
 				<input
@@ -22,6 +22,6 @@ export const Modal = ({ closeModal, savePrice }) => {
 				<button onClick={() => savePrice(Number(price))}>Сохранить</button>
 				<button onClick={closeModal}>Закрыть</button>
 			</div>
-		</div>
+		</section>
 	)
 }

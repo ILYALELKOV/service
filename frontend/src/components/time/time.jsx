@@ -21,12 +21,12 @@ export const Time = () => {
 	const seconds = date.getSeconds()
 
 	return (
-		<div className={theme === 'light' ? style.time_container_light : style.time_container_dark}>
+		<section className={theme === 'light' ? style.time_container_light : style.time_container_dark}>
 			<p>{hours}</p>
 			<p>:</p>
 			<p>{minutes < 10 ? '0' + minutes : minutes}</p>
 			<p>:</p>
 			<p>{seconds < 10 ? '0' + seconds : seconds}</p>
-		</div>
+		</section>
 	)
 }

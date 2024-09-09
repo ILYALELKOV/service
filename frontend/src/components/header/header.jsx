@@ -23,14 +23,14 @@ export const Header = () => {
 	}
 
 	return (
-		<div className={theme === 'light' ? style.container_light : style.container_dark}>
+		<header className={theme === 'light' ? style.container_light : style.container_dark}>
 			<button className={style.button_theme} onClick={onChangeTheme}>
 				<img src="../../../public/theme.png" alt="theme_icon" />
 			</button>
 
 			<Time />
 
-			<div className={theme === 'light' ? style.date_container_light : style.date_container_dark}>
+			<section className={theme === 'light' ? style.date_container_light : style.date_container_dark}>
 				<div className={style.calendar}></div>
 				<p>{new Date().toLocaleString('ru', {
 					year: 'numeric',
@@ -40,14 +40,13 @@ export const Header = () => {
 				<p>{new Date().toLocaleString('ru', {
 					weekday: 'long'
 				})}</p>
-			</div>
+			</section>
 
 			<Link to="/">
 				<button className={style.logo_image}></button>
 			</Link>
 
-
-			<div className={style.user_container}>
+			<section className={style.user_container}>
 				<div className={style.user_logo}></div>
 				{userName === null
 					? <div>
@@ -55,33 +54,33 @@ export const Header = () => {
 						<p className={style.user_name_default}>аккаунт</p>
 					</div>
 					: <h3 className={style.user_name}>{userName}</h3>}
-			</div>
+			</section>
 
 			{userName === null
 				? (<Link to="/login">
-					<div className={style.login_container}>
+					<section className={style.login_container}>
 						<div className={style.log_in_out}></div>
 						<div>
 							<p className={style.logIn_link}>Вход /</p>
 							<p className={style.logIn_link}> Регистрация</p>
 						</div>
-					</div>
+					</section>
 				</Link>)
 				: (
-					<div className={style.login_container} onClick={onLogOut}>
+					<section className={style.login_container} onClick={onLogOut}>
 						<div className={style.log_in_out}></div>
 						<h4 className={theme === 'light' ? style.logOut_link_light : style.logOut_link_dark}>Выйти</h4>
 						<h4 className={theme === 'light' ? style.logOut_link_light : style.logOut_link_dark}> из аккаунта</h4>
-					</div>
+					</section>
 				)}
 			{userRole === ROLE.ADMIN
 				? (
 					<Link to="/admin">
-						<div className={style.admin_container}>
+						<section className={style.admin_container}>
 							<div className={style.admin}></div>
 							<p>Панель</p>
 							<p>администратора</p>
-						</div>
+						</section>
 					</Link>
 				)
 				: null
@@ -89,15 +88,15 @@ export const Header = () => {
 			{userRole === ROLE.USER
 				? (
 					<Link to="/account">
-						<div className={style.account_container}>
+						<section className={style.account_container}>
 							<div className={style.account}></div>
 							<p>Личный</p>
 							<p>кабинет</p>
-						</div>
+						</section>
 					</Link>
 				)
 				: null
 			}
-		</div>
+		</header>
 	)
 }

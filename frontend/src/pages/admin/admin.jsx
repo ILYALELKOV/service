@@ -44,9 +44,9 @@ export const Admin = () => {
 					{isLoading ? (
 						<Loader />
 					) : (
-						<div className={style.room_container}>
+						<main className={style.room_container}>
 							{rooms.map((room) => (
-								<div
+								<section
 									className={room.isAvailable ? style.room_item : style.reserved_room}
 									key={room._id}
 								>
@@ -56,9 +56,9 @@ export const Admin = () => {
 										<button className={style.cancel_reservation} onClick={() => onDeleteReservation(room._id)}>Снять
 											бронь</button>
 									)}
-								</div>
+								</section>
 							))}
-						</div>
+						</main>
 					)}
 				</div>
 			)}
