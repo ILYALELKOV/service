@@ -19,6 +19,7 @@
 	border-radius: 10px;
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 	width: 400px;
+	height: 210px;
 	max-width: 100%;
 	text-align: center;
 }
@@ -51,7 +52,7 @@
 	background-color: #e0dede;
 }
 
-.modal_content button {
+.save_button {
 	padding: 10px 20px;
 	width: 155px;
 	border: none;
@@ -65,18 +66,33 @@
 	margin: 5px;
 }
 
-.modal_content button:hover {
+.save_button:hover {
 	box-shadow: 0 6px 8px rgb(47, 249, 135);
 	transition: 0.8s ease;
 }
 
-.modal_content button:last-child {
+.close_button {
 	background: #8E0E00; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	margin: 5px;
+	padding: 10px 20px;
+	width: 155px;
+	border: none;
+	border-radius: 5px;
 }
 
-.modal_content button:last-child:hover {
+.close_button:hover {
 	box-shadow: 0 6px 8px rgb(228, 46, 46);
 	transition: 0.8s ease;
 }
+
+.error_price {
+	color: #e02323;
+	font-weight: bold;
+	margin-top: 10px;
+}
+

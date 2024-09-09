@@ -12,6 +12,7 @@ import style from './room.module.css'
 export const Room = () => {
 	const [room, setRoom] = useState(null)
 	const [isModalOpen, setIsModalOpen] = useState(false)
+	const [errorPrice, setErrorPrice] = useState(null)
 
 	const { id } = useParams()
 	const userRole = useSelector(selectUserRole)
@@ -37,12 +38,17 @@ export const Room = () => {
 	}
 
 	const handleSavePrice = (newPrice) => {
+		if (!newPrice || newPrice < 0) {
+			setErrorPrice('Число не должно быть пустым или меньше нуля')
+			return
+		}
 		request(`/room/${id}/update-price`, 'PATCH', { newPrice })
 			.then(() => request(`/room/${id}`))
 			.then((res) => setRoom(res))
 			.then(() => setIsModalOpen(false))
+			.then(() => setErrorPrice(null))
 	}
-
+//TODO протестировать модалку!!!
 	return (
 		<>
 			{room ? (
@@ -92,7 +98,7 @@ export const Room = () => {
 			)}
 
 			{isModalOpen && (
-				<Modal closeModal={handleCloseModal} savePrice={handleSavePrice} />
+				<Modal closeModal={handleCloseModal} savePrice={handleSavePrice} errorPrice={errorPrice} />
 			)}
 
 			<Link to="/">

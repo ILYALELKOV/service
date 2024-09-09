@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import style from './modal.module.css'
 
-export const Modal = ({ closeModal, savePrice }) => {
+export const Modal = ({ closeModal, savePrice, errorPrice }) => {
 	const [price, setPrice] = useState('')
 
 	const handlePriceChange = (e) => {
@@ -19,8 +19,11 @@ export const Modal = ({ closeModal, savePrice }) => {
 					onChange={handlePriceChange}
 					type="number"
 				/>
-				<button onClick={() => savePrice(Number(price))}>Сохранить</button>
-				<button onClick={closeModal}>Закрыть</button>
+				<button className={style.save_button} onClick={() => savePrice(Number(price))}>Сохранить</button>
+				<button className={style.close_button} onClick={closeModal}>Закрыть</button>
+				{errorPrice && (
+					<p className={style.error_price}>{errorPrice}</p>
+				)}
 			</div>
 		</section>
 	)
