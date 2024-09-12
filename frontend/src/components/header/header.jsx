@@ -61,8 +61,8 @@ export const Header = () => {
 					<section className={style.login_container}>
 						<div className={style.log_in_out}></div>
 						<div>
-							<p className={style.logIn_link}>Вход /</p>
-							<p className={style.logIn_link}> Регистрация</p>
+							<p className={theme === 'light' ? style.logIn_link_light : style.logIn_link_dark}>Вход /</p>
+							<p className={theme === 'light' ? style.logIn_link_light : style.logIn_link_dark}> Регистрация</p>
 						</div>
 					</section>
 				</Link>)

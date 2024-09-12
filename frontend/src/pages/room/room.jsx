@@ -30,6 +30,7 @@ export const Room = () => {
 	}
 
 	const handleChangePrice = () => {
+		setErrorPrice(null)
 		setIsModalOpen(true)
 	}
 
@@ -48,7 +49,7 @@ export const Room = () => {
 			.then(() => setIsModalOpen(false))
 			.then(() => setErrorPrice(null))
 	}
-//TODO протестировать модалку!!!
+
 	return (
 		<>
 			{room ? (

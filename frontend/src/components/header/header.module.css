@@ -165,8 +165,13 @@ p {
 	background-size: 80%;
 }
 
-.logIn_link {
+.logIn_link_light {
 	color: #0b0808;
+	font-weight: bold;
+}
+
+.logIn_link_dark {
+	color: #e8eef7;
 	font-weight: bold;
 }
 
