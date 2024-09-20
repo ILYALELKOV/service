@@ -41,23 +41,7 @@ export default defineConfig({
 				changeOrigin: true
 			}
 		},
-		historyApiFallback: true,
-		setup: (app) => {
-			app.use(
-				history({
-					rewrites: [
-						{
-							from: /^(\/register|\/login|\/logout|\/rooms|\/room|\/user)\/.*$/,
-							to: (context) => context.parsedUrl.pathname
-						},
-						{
-							from: /./,
-							to: '/index.html'
-						}
-					]
-				})
-			)
-		}
+		historyApiFallback: true
 	}
 })
 

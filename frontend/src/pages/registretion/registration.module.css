@@ -100,7 +100,7 @@
 }
 
 .error_container_light {
-	height: 120px;
+	height: 80px;
 	max-width: 400px;
 	margin: 0;
 	color: #b01414;
@@ -109,7 +109,7 @@
 }
 
 .error_container_dark {
-	height: 120px;
+	height: 80px;
 	max-width: 400px;
 	margin: 0;
 	color: #cf1313;

@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setUser } from '../../redux/actions/index.js'
 import { selectTheme, selectUserRole } from '../../redux/selectors/index.js'
 import { ServerError } from '../../components/serverError/serverError.jsx'
-import { ROLE } from '../../constans/index.js'
+import { ERROR, ROLE } from '../../constans/index.js'
 import style from './registration.module.css'
 import styleInput from './styles/input/input.module.css'
 
@@ -34,8 +34,13 @@ export const Registration = () => {
 		request('/register', 'POST', { login, password })
 			.then(({ error, user }) => {
 				if (error) {
-					setServerError(error.error)
-					return
+					if (error.slice(0, 16) === ERROR.DUPLICATE_USER) {
+						setServerError('Имя пользователя занято')
+						return
+					} else {
+						setServerError(error.error)
+						return
+					}
 				}
 				dispatch(setUser(user))
 				sessionStorage.setItem('userData', JSON.stringify(user))
