@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import style from './modal.module.css'
+import PropTypes from 'prop-types'
 
 export const Modal = ({ closeModal, savePrice, errorPrice }) => {
 	const [price, setPrice] = useState('')
@@ -28,3 +29,10 @@ export const Modal = ({ closeModal, savePrice, errorPrice }) => {
 		</section>
 	)
 }
+
+Modal.propTypes = {
+	closeModal: PropTypes.func.isRequired,
+	savePrice: PropTypes.func.isRequired,
+	errorPrice: PropTypes.string
+}
+

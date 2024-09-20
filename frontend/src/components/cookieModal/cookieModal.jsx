@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import style from './cookieModal.module.css'
 
-
 export const CookieModal = () => {
 	const [isOpen, setIsOpen] = useState(false)
 

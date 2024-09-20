@@ -20,8 +20,7 @@ export default defineConfig({
 			},
 			'/rooms': {
 				target: 'http://localhost:3001',
-				changeOrigin: true,
-				rewrite: (path) => path.replace(/^\/rooms/, '/rooms')
+				changeOrigin: true
 			},
 			'/room': {
 				target: 'http://localhost:3001',

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import style from './userBookedRoomsCard.module.css'
 
 export const UserBookedRoomsCard = ({ img, name, size, amenities, onDeleteBooking, id }) => {
@@ -20,3 +21,14 @@ export const UserBookedRoomsCard = ({ img, name, size, amenities, onDeleteBookin
 		</section>
 	)
 }
+
+UserBookedRoomsCard.propTypes = {
+	img: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired,
+	size: PropTypes.string,
+	amenities: PropTypes.array,
+	onDeleteBooking: PropTypes.func.isRequired,
+	id: PropTypes.string.isRequired
+}
+
+

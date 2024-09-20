@@ -1,4 +1,5 @@
 import { forwardRef } from 'react'
+import PropTypes from 'prop-types'
 
 export const Input = forwardRef(({ text, type = 'text', styleClass, ...props }, ref) => {
 	return (
@@ -7,3 +8,9 @@ export const Input = forwardRef(({ text, type = 'text', styleClass, ...props }, 
 		</>
 	)
 })
+
+Input.propTypes = {
+	text: PropTypes.string.isRequired,
+	type: PropTypes.oneOf(['text', 'number', 'password']),
+	styleClass: PropTypes.object.isRequired
+}

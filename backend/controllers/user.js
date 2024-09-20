@@ -1,7 +1,6 @@
+const { generate } = require('../helpers/token')
 const bcrypt = require('bcrypt')
 const User = require('../models/User')
-const { generate } = require('../helpers/token')
-
 
 async function register(login, password) {
 	if (!password) {
@@ -43,6 +42,5 @@ async function getUsers() {
 async function deleteUser(userId) {
 	await User.deleteOne({ _id: userId })
 }
-
 
 module.exports = { register, login, getUsers, deleteUser }

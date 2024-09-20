@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router'
 import { useSelector } from 'react-redux'
 import { selectTheme } from '../../redux/selectors/index.js'
 import style from './roomCard.module.css'
+import PropTypes from 'prop-types'
 
 export const RoomCard = ({ url, price, size, name, id, isAvailable }) => {
 
@@ -28,4 +29,13 @@ export const RoomCard = ({ url, price, size, name, id, isAvailable }) => {
 			)}
 		</>
 	)
+}
+
+RoomCard.propTypes = {
+	url: PropTypes.string.isRequired,
+	price: PropTypes.number.isRequired,
+	size: PropTypes.string,
+	name: PropTypes.string.isRequired,
+	id: PropTypes.string.isRequired,
+	isAvailable: PropTypes.bool.isRequired
 }

@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
 import { selectTheme } from '../../redux/selectors/index.js'
+import PropTypes from 'prop-types'
 import style from '../../pages/registretion/registration.module.css'
 
 export const ErrorContainer = ({ errors }) => {
@@ -12,4 +13,8 @@ export const ErrorContainer = ({ errors }) => {
 			<p>{errors.checkPassword && errors.checkPassword.message}</p>
 		</section>
 	)
+}
+
+ErrorContainer.propTypes = {
+	errors: PropTypes.object.isRequired
 }
