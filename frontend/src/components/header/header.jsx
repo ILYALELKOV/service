@@ -25,7 +25,6 @@ export const Header = () => {
 	return (
 		<header className={theme === 'light' ? style.container_light : style.container_dark}>
 			<button className={style.button_theme} onClick={onChangeTheme}>
-				<img src="../../../public/theme.png" alt="theme_icon" />
 			</button>
 
 			<Time />

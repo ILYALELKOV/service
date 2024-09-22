@@ -36,6 +36,14 @@ p {
 	background: transparent;
 	border: none;
 	padding: 0;
+	background-image: url(../../../public/theme.png);
+	width: 40px;
+	height: 40px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center; /* Центрирует изображение в кнопке */
+	border: none; /* Если хотите убрать обводку */
+	cursor: pointer; /* Добавляет указатель при наведении */
 }
 
 .logo_image {
