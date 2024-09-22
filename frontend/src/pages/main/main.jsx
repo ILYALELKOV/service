@@ -16,7 +16,7 @@ export const Main = () => {
 	useEffect(() => {
 		dispatch(loadRoomsAsync())
 			.then(() => setIsLoading(false))
-	}, [dispatch, rooms])
+	}, [dispatch])
 
 	return (
 		<>

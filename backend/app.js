@@ -13,6 +13,8 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 
+app.use(express.static(path.join(__dirname, '..', 'frontend', 'build')))
+
 app.use('/', routes)
 
 app.get('*', (req, res) => {
