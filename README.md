@@ -27,21 +27,21 @@ Metrolux — это веб-приложение для бронирования 
 ## Установка и запуск проекта
 
 1. Клонируйте репозиторий:
-	 `git clone https://github.com/ILYALELKOV/service.git`
+   `git clone https://github.com/ILYALELKOV/service.git`
 
 2. Перейдите в директорию проекта:
-	 `cd metrolux`
+   `cd metrolux`
 
 3. Установите зависимости для фронтенда:
-	 `cd frontend`
-	 `npm install`
+   `cd frontend`
+   `npm install`
 
 4. Запустите фронтенд-сервер для разработки:
-	 `npm run dev`
+   `npm run dev`
 
 5. Установите зависимости для бэкенда:
-	 `cd backend`
-	 `npm install`
+   `cd backend`
+   `npm install`
 
 6. Запустите бэкенд-сервер:
-	 `npm start`
+   `npm run dev`
